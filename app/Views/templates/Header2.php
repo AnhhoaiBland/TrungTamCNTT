@@ -68,16 +68,16 @@
 
 <body>
     <header class="container-fluid nav_top" style="color: #11286e">
-        <!-- <div class="container-fluid d-flex align-items-center justify-content-end p-3 position-relative" style="height: 40px">
+        <div class="container-fluid d-flex align-items-center justify-content-end p-3 position-relative" style="height: 40px">
             <marquee style="
                 font-size: 15px;    
                 width: 100%;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-              " class="element-to-hide-960 text-white position-absolute"><?= $Chu_chay ?></marquee>  
+           " class="element-to-hide-960 text-white position-absolute">TRANG THÔNG TIN ĐIỆN TỬ TRUNG TÂM CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG THÀNH PHỐ CẦN THƠ </marquee>
             <ul class="d-flex list-unstyled align-items-center mt-3 me-3 position-relative">
-        </div></ul> -->
+        </div></ul>
     </header>
 
     <div style="background-color: #fff">
