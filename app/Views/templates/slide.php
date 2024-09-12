@@ -1,10 +1,10 @@
 <style>
     .carousel-item {
-        max-height: 650px;
+        max-height: 695px;
     }
 
     .carousel-item img {
-        max-height: 670px;
+        max-height: 850px;
         width: 100%;
         object-fit: fill;
         object-position: 50% 50%;
@@ -12,25 +12,24 @@
 </style>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!-- Phần chỉ báo (carousel-indicators) đã được loại bỏ vì không cần thiết -->
+    
+    <div class="carousel-inner" id="root-slide">
+        <div class="carousel-item active">
+            <!-- Đây là nơi bạn sẽ đặt nội dung của banner duy nhất -->
+            <img src="path-to-your-banner.jpg" class="d-block w-100" alt="Banner">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Tiêu đề banner</h5>
+                <p>Mô tả ngắn về banner.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="carousel-inner" id="root-slide"></div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+   
 </div>
 
-<script>
+
+<!-- <script>
     const rootSlide = document.getElementById('root-slide');
 
     rootSlide.innerHTML = '';
@@ -76,4 +75,44 @@
             }
         }
     });
+</script> -->
+
+
+<script>
+    const rootSlide = document.getElementById('root-slide');
+
+
+
+// Lấy dữ liệu từ AJAX và chỉ hiển thị một ảnh duy nhất
+$.ajax({
+    url: 'home/ajax_getpaneltop',
+    type: 'get',
+    dataType: 'JSON',
+    success: function(result) {
+        if (result.length > 0) {
+            const element = result[0]; // Chỉ lấy phần tử đầu tiên
+            let carouselItemHTML = '';
+
+            if (element.urlBaiViet) {
+                carouselItemHTML = `
+                <div class="carousel-item active">
+                    <a href="${element.urlBaiViet}">
+                        <img src="upload/media/images/${element.imageURL}" class="d-block w-100" alt="Banner Image">
+                    </a>
+                </div>
+                `;
+            } else {
+                carouselItemHTML = `
+                <div class="carousel-item active">
+                    <img src="upload/media/images/${element.imageURL}" class="d-block w-100" alt="Banner Image">
+                </div>
+                `;
+            }
+            rootSlide.innerHTML = carouselItemHTML; // Chỉ hiển thị một ảnh duy nhất
+        }
+    }
+});
+
 </script>
+
+

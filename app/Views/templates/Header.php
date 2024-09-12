@@ -5,7 +5,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-          " class="element-to-hide-960 text-white position-absolute">TRANG THÔNG ĐIỆN TỬ CỦA HỘI LIÊN HIỆP PHỤ NỮ THÀNH PHỐ CẦN THƠ</marquee>
+          " class="element-to-hide-960 text-white position-absolute">TRANG THÔNG TIN ĐIỆN TỬ TRUNG TÂM CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG THÀNH PHỐ CẦN THƠ </marquee>
         <ul class="d-flex list-unstyled mt-3 me-3">
 
             <form class="d-flex me-2">
