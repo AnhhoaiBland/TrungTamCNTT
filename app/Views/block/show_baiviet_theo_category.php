@@ -146,7 +146,7 @@ function cut_text($text, $max_length, $ellipsis = '...')
 	<div>
 		<h5 class="category_title"><?= $chuyenMuc[0]['tenChuyenMuc'] ?></h5>
 	</div>
-	<?php if (count($ds_baiDang) > 0) : ?>
+	<?php if (count($ds_baiDang) > 0) : ?>	
 		<div class="container-card">
 			<?php foreach ($ds_baiDang as $baidang) : ?>
 

@@ -49,6 +49,15 @@ function cut_text($text, $max_length, $ellipsis = '...')
         object-fit: contain;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
+
+    .title {
+        margin-top: 10px;
+        margin-left: 25px;
+        background-color: #007bff; /* Blue background color */
+        color: white; /* White text color */
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px; /* Padding */
+    }
 </style>
 
 <div class="bg-body" style="min-height: 800px;">
@@ -67,18 +76,13 @@ function cut_text($text, $max_length, $ellipsis = '...')
             <div class="carousel-inner">
                 <?php foreach ($item_bst as $key => $bst) { ?>
                     <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
-                        <img src="<?= base_url("upload/media/images/{$bst['urlFile']}") ?>" class="d-block w-100" alt="...">
+                        <a href="<?= base_url("upload/media/images/{$bst['urlFile']}") ?>" target="_blank">
+                            <img src="<?= base_url("upload/media/images/{$bst['urlFile']}") ?>" class="d-block w-100" alt="...">
+                        </a>
                     </div>
                 <?php } ?>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+           
         </div>
     <?php } else { ?>
         <!-- <div class="d-flex justify-content-center">
@@ -90,11 +94,7 @@ function cut_text($text, $max_length, $ellipsis = '...')
         echo view('block/Block_video', $dtv) ?>
     <?php } ?>
 
-
-
     <div class="mota p-3">
         <?= $infor_bst[0]["moTa"] ?>
     </div>
-
-
 </div>
