@@ -1,3 +1,4 @@
+
 a{
 	color: #000;
 	text-decoration: none;
@@ -98,9 +99,9 @@ a.link-file{
 .trangchu_block{
 	display: block;
 	text-align: center;
-	/*height: 750px;*/
-	/*height: 46.5vh;*/
-	/*padding-top: 350px;*/
+	height: 750px;
+	height: 46.5vh;
+	padding-top: 350px;
 	vertical-align: center;
 	background-color: #acacac;
 	
@@ -121,15 +122,6 @@ a.link-file{
 	padding-top: 2px;
 }
 
-.form-control !important{
-	font-size: 9pt;
-}
-.form-group{
-	margin-bottom: 0px;
-}
-.container h3{
-	color: #0a9cc7;
-}
 
 .nav-tabs.nav-justified > li  {
 	padding-bottom: 0;
@@ -153,13 +145,13 @@ a.link-file{
 .btn{
 	font-size: 10px;
 }
-/*.form-control{
+/* .form-control{
 	font-size: 10px;
 	height: 26px;
 }
 .form-control option{
 	font-size: 10px;
-}*/
+} */
 .btn_quay_lai{
 	background-image: none;
 	background-color: #d9534f;
@@ -167,7 +159,7 @@ a.link-file{
 	border:0px;
 	font-size: 9pt;
 	padding: 8px 12px;
-	width: 80%;
+	width: 100%;
 }
 .btn_quay_lai:hover{
 	color: #ffffff;

@@ -36,23 +36,9 @@
 <div style="background-color: #033e8c" class="pt-2 pb-2">
 
     <div class="">
-        <div class="d-flex align-items-center text-white p-2">
-            <a href="<?= base_url()?>" class="logo" style="width: 130px">
-                <img src="/icons/logo_1732023143957.png" alt="" />
-            </a>
-            <div class="tenToChu_khauhieu">
-                <div class="tenToChuc fw-bold">
-                    HỘI LIÊN HIỆP PHỤ NỮ VIỆT NAM
-                    THÀNH PHỐ CẦN THƠ
-                </div>
-                <div class="khauHieu">
-                    Phụ nữ thành phố Cần Thơ
-                    Đoàn kết - Đổi mới - Bình đẳng - Hội nhập!
-                </div>
-            </div>
-        </div>
+        
         <!-- slide -->
-        <?= $this->renderSection('templates/slide') ?>
+      
         <!-- end slide -->
 
         <div class="container_navBar">

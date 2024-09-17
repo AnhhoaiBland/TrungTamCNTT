@@ -3,10 +3,14 @@
         font-weight: bold;
         font-size: 17px;
         color: #333;
+        text-decoration: none;
+    }
+    label{
+        text-decoration: none;
     }
 </style>
 <div class="bg-body p-3">
-    <label for="" class="form-label tieu_de_lienket text-decoration-underline">LIÊN KẾT WEBSITE</label>
+    <label for="" class="form-label tieu_de_lienket ">LIÊN KẾT WEBSITE</label>
 
     <select name="forma" class="form-select" aria-label="Default select example" onchange="window.open(this.options[this.selectedIndex].value, '_blank');">
         <option value="/" selected>Liên kết</option>

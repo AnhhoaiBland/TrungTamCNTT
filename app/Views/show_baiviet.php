@@ -1,39 +1,95 @@
 <style>
-	.bg-body {
-		background-color: #f8f9fa;
-		padding: 20px;
-		border-radius: 5px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	}
+/* Blog Post Container */
+.bg-body {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
 
-	.content_tieude {
-		margin-bottom: 15px;
-	}
+/* Title Section */
+.content_tieude {
+    margin-bottom: 20px;
+}
 
-	.content_tieude h3 {
-		font-size: 24px;
-		color: #333;
-		margin-bottom: 5px;
-	}
+.content_tieude h3 {
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
 
-	.span_ngaydang,
-	.span_chuyenmuc {
-		font-size: 14px;
-		color: #666;
-	}
+.span_ngaydang,
+.span_chuyenmuc {
+    font-size: 14px;
+    color: #7f8c8d;
+}
 
-	.img_anhminhhoa {
-		max-width: 100%;
-		height: auto;
-		display: block;
-		margin: 0 auto 20px;
-	
-	}
-	.content_noidung {
-		font-size: 16px;
-		line-height: 1.6;
-		color: #333;
-	}
+.span_chuyenmuc {
+    font-style: italic;
+}
+
+/* Image Styling - Consistent Size */
+.img_anhminhhoa {
+    max-width: 100%;
+    height: 400px; /* Set fixed height for consistent image sizes */
+    object-fit: cover; /* Ensures the image fits within the fixed height while maintaining aspect ratio */
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.img_anhminhhoa:hover {
+    transform: scale(1.05);
+}
+
+/* Content Text Styling - Justified */
+.content_noidung {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #34495e;
+    margin-top: 20px;
+    text-align: justify; /* Justify text for equal alignment on both sides */
+}
+
+.content_noidung p {
+    margin-bottom: 15px;
+}
+
+/* Buttons or Links in Content */
+.content_noidung a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.content_noidung a:hover {
+    border-bottom: 2px solid #3498db;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .content_tieude h3 {
+        font-size: 24px;
+    }
+
+    .content_noidung {
+        font-size: 16px;
+        text-align: justify; /* Ensure justification on smaller screens as well */
+    }
+
+    .img_anhminhhoa {
+        height: 250px; /* Adjust image height for smaller screens */
+    }
+}
+
+
 </style>
 <div class="w-100 bg-body" style="min-height: 1000px;">
 	<div class="content_baiviet">
