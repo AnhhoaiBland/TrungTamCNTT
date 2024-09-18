@@ -1,4 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Example</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -6,66 +11,68 @@
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
- /* Đặt màu nền của thanh menu là trắng */
-.mainmenu {
-    background-color: #fff; /* Màu nền trắng của thanh menu */
-    position: relative; /* Đặt position relative cho thanh menu lớn */
-}
+        /* Đặt màu nền của thanh menu là trắng */
+        .mainmenu {
+            background-color: #fff; /* Màu nền trắng của thanh menu */
+            position: relative; /* Đặt position relative cho thanh menu lớn */
+        }
 
-/* Đặt màu chữ trong menu là đen */
-.nav-link {
-    color: #000; /* Màu chữ đen */
-}
+        /* Đặt màu chữ trong menu là đen */
+        .nav-link {
+            color: #000; /* Màu chữ đen */
+        }
 
-/* Đặt màu nền của menu con và màu chữ */
-.nav-item .dropdown-menu {
-    background-color: #fff; /* Màu nền trắng của menu con */
-    color: #000; /* Màu chữ đen trong menu con */
-    display: none; /* Ẩn menu con mặc định */
-    position: absolute; /* Đặt vị trí tuyệt đối để menu con xuất hiện dưới menu lớn */
-    top: 100%; /* Đặt menu con ngay dưới menu lớn */
-    left: 0; /* Canh lề trái */
-    width: 100%; /* Chiếm toàn bộ chiều rộng của menu lớn */
-    z-index: 1000; /* Đặt chỉ số z để đảm bảo menu con hiển thị trên các phần tử khác */
-}
+        /* Đặt màu nền của menu con và màu chữ */
+        .nav-item .dropdown-menu {
+            background-color: #fff; /* Màu nền trắng của menu con */
+            color: #000; /* Màu chữ đen trong menu con */
+            display: none; /* Ẩn menu con mặc định */
+            position: absolute; /* Đặt vị trí tuyệt đối để menu con xuất hiện dưới menu lớn */
+            top: 100%; /* Đặt menu con ngay dưới menu lớn */
+            left: 0; /* Canh lề trái */
+            min-width: 200px; /* Đặt chiều rộng tối thiểu để tránh bị cắt chữ */
+            z-index: 1000; /* Đặt chỉ số z để đảm bảo menu con hiển thị trên các phần tử khác */
+            padding: 0.5rem; /* Thêm khoảng cách bên trong menu con */
+            border-radius: 0.25rem; /* Làm tròn các góc menu con */
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Thêm bóng cho menu con */
+        }
 
-/* Đặt màu chữ và nền của mục menu con khi hover */
-.nav-item .dropdown-item {
-    color: #000; /* Màu chữ đen trong mục menu con */
-}
+        /* Đặt màu chữ và nền của mục menu con khi hover */
+        .nav-item .dropdown-item {
+            color: #000; /* Màu chữ đen trong mục menu con */
+            padding: 0.5rem 1rem; /* Thêm khoảng cách bên trong mục menu con */
+        }
 
-.nav-item .dropdown-item:hover {
-    background-color: #cce5ff; /* Màu nền khi hover xanh dương nhạt */
-    color: #000; /* Màu chữ khi hover vẫn là đen */
-}
+        .nav-item .dropdown-item:hover {
+            background-color: #cce5ff; /* Màu nền khi hover xanh dương nhạt */
+            color: #000; /* Màu chữ khi hover vẫn là đen */
+        }
 
-/* Hiển thị menu con khi di chuột qua bất kỳ mục menu lớn nào */
-.nav-item:hover .dropdown-menu {
-    display: block; /* Hiển thị menu con khi hover */
-}
+        /* Hiển thị menu con khi di chuột qua bất kỳ mục menu lớn nào */
+        .nav-item:hover .dropdown-menu {
+            display: block; /* Hiển thị menu con khi hover */
+        }
 
-/* Đặt màu nền khi hover cho các mục menu lớn */
-.nav-link:hover,
-.nav-item:hover > .nav-link {
-    background-color: #cce5ff; /* Màu nền khi hover giống như menu con */
-    color: #000; /* Màu chữ khi hover vẫn là đen */
-}
+        /* Đặt màu nền khi hover cho các mục menu lớn */
+        .nav-link:hover,
+        .nav-item:hover > .nav-link {
+            background-color: #cce5ff; /* Màu nền khi hover giống như menu con */
+            color: #000; /* Màu chữ khi hover vẫn là đen */
+        }
 
-/* Đảm bảo dropdown không bị ẩn khi di chuột ra ngoài */
-.dropdown-menu {
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
+        /* Đảm bảo dropdown không bị ẩn khi di chuột ra ngoài */
+        .dropdown-menu {
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-.nav-link i {
-    margin-right: 8px;
-}
-
+        .nav-link i {
+            margin-right: 8px;
+        }
     </style>
 </head>
-
 <body>
     <header class="container-fluid nav_top" style="color: #11286e">
         <div class="container-fluid d-flex align-items-center justify-content-end p-3 position-relative" style="height: 40px">
@@ -150,3 +157,4 @@
         </div><!-- menu area end -->
     </div>
 </body>
+</html>

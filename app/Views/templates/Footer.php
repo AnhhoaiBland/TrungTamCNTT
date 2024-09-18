@@ -1,107 +1,163 @@
-<style>
-    footer {
-        background-color: #11286f;
-        color: white;
-        padding-top: 0.5rem;
-        padding-bottom: 2rem;
-    }
+<!doctype html>
+<html lang="en">
 
-    footer h4 {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="./public/footer/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="./public/footer/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./public/footer/css/style.css">
+  <style>
+  .footer-32892 {
+  padding: 0 50px; /* Giảm padding để làm footer nhỏ lại */
+}
 
-    footer p,
-    footer a {
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
+.footer-32892 h3 {
+  color: #000000;
+  margin-bottom: 5px; /* Giảm khoảng cách giữa tiêu đề và phần tử phía dưới */
+}
 
-    footer a {
-        color: #dcdcdc;
-        text-decoration: none;
-    }
+.footer-32892 h2 {
+  color: #0056b3;
+  text-align: center;
+}
 
-    footer a:hover {
-        color: #ffffff;
-        text-decoration: underline;
-    }
+.footer-32892 .quick-info li a {
+  color: #000000;
+}
 
-    @media (max-width: 768px) {
-        .footer-col {
-            margin-bottom: 1rem;
-        }
-    }
+.footer-32892 hr {
+  border: 0;
+  height: 1px; /* Giảm độ dày của đường ngang */
+  background-color: #212529;
+  margin: 10px 0; /* Thay đổi margin để giảm khoảng cách */
+}
 
-    iframe {
-        width: 100%;
-        height: 200px;
-        border-radius: 10px;
-        border: none;
-    }
+.footer-32892 .logo {
+  padding: 0;
+  margin-bottom: 10px; /* Giảm khoảng cách dưới logo */
+}
 
-    .counter {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        margin-bottom: 1rem;
-    }
+.quick-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Giữ căn lề trái */
+  padding: 0;
+  margin: 0;
+}
 
-    .btn-ctici {
-        background-color: transparent;
-        color: #dcdcdc;
-        border: none;
-        padding: 0;
-    }
+.quick-info li {
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
 
-    .btn-ctici:hover {
-        color: #ffffff;
-    }
+.quick-info li:hover {
+  background-color: #d0e0f0;
+}
 
-    footer p,
-    footer a {
-        font-size: 1rem;
-    }
+.quick-info li a {
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 6px; /* Giảm padding cho các liên kết */
+  width: 100%;
+  box-sizing: border-box;
+}
 
-    .footer-stats {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
-</style>
-<footer>
-    <div class="container-fluid" style="background-color: #11286f;">
-        <div class="row ms-lg-5">
-            <div class="col-lg-6 col-md-6 footer-col ps-lg-5">
-                <h4 style="color: white;">TRANG THÔNG TIN HỘI LIÊN HIỆP PHỤ NỮ THÀNH PHỐ CẦN THƠ</h4>
-                <P style="color: white;">Đơn vị quản lý: Hội liên hiệp phụ nữ Thành phố Cần thơ</P>
-                <p style="color: white;">Chịu trách nhiệm nội dung: <?= $responsiblePerson ?></p>
-                <br>
-                <p style="color: white;">Ghi rõ nguồn "Hội liên hiệp phụ nữ Thành phố Cần Thơ" khi phát hành lại thông tin</p>
-            
-                <h4>LIÊN HỆ</h4>
-                <p style="color: white;">Địa chỉ: <?= $address ?> </p>
-                <p style="color: white;">Điện thoại: <?= $phoneNumber ?></p>
-                <p style="color: white;">Số fax: <?= $faxNumber ?></p>
-                <p style="color: white;">Email: <?= $email ?></p>
-                <p style="color: white;">Facebook: <?= $facebook ?></p>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-col">
-                <h4>Bản đồ</h4>
-                <?= $map ?>
-            </div>
-            <div class="col-lg-3 footer-mg-lg  col-md-6 footer-col">
-                <div class="footer-stats ms-lg-4">
-                    <h4>THỐNG KÊ TRUY CẬP</h4>
-                    <p style="color: white;">Tổng số lượt truy cập: <?= $luoc_truy_cap['sl_tc_tong'] ?></p>
-                    <p style="color: white;">Hôm nay: <?= $luoc_truy_cap['sl_tc_ngay'] ?></p>
-                    <p style="color: white;">Tháng này: <?= $luoc_truy_cap['sl_tc_thang'] ?></p>
-                    <p style="color: white;">Trong năm nay: <?= $luoc_truy_cap['sl_tc_nam'] ?></p>
-                    <br>
-                    <p style="color: rgb(178, 171, 171);">Xây dựng và thiết kế bởi <a href="https://ctict.cantho.gov.vn/index.php">CTICT</a></p>
-                </div>
-            </div>
-        </div>
+.quick-info li a:hover {
+  color: #0056b3;
+}
+
+.custom-margin {
+  padding: 0 15px; /* Giảm padding cho phần tử có lớp custom-margin */
+}
+
+.subscribe input[type="text"] {
+  padding: 6px; /* Giảm padding cho ô nhập liệu */
+}
+
+.subscribe input[type="submit"] {
+  padding: 6px 12px; /* Giảm padding cho nút gửi */
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Giảm chiều cao của phần chứa bản đồ */
+  border: 1px solid #ddd; /* Giảm độ dày của đường viền */
+  border-radius: 6px; /* Giảm độ bo góc */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Giảm độ đổ bóng */
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- //gạch ngang màu xanh đậm ở đây -->
+  <footer class="footer-32892 pb-0" style="background-color: #ffffff;">
+    <hr>
+    <div class="site-section">
+      <div class="container-fluid custom-margin">
+        <div class="row">
+          <div class="col-12 text-center logo">
+            <img src="<?= base_url("public/icons/logocoten.jpg") ?>" alt="Logo" class="img-fluid" style="max-width: 150px;">
+          </div>
+          <div class="col-md pr-md-5 mb-4 mb-md-0">
+            <h2>Trung tâm Công nghệ Thông tin và Truyền thông Cần Thơ</h2>
+            <p></p>
+            <br>
+            <ul class="list-unstyled quick-info mb-4">
+              <li><a href="#" class="d-flex align-items-center"><span class="bi bi-geo-alt mr-3"></span>Số 29 đường Cách mạng tháng 8 - phường Thới Bình - quận Ninh Kiều - TP.Cần Thơ.</a></li>
+              <li><a href="#" class="d-flex align-items-center"><span class="bi bi-telephone mr-3"></span>(0292) 3 690 888 - Fax: 080 72123</a></li>
+              <li><a href="#" class="d-flex align-items-center"><span class="bi bi-envelope mr-3"></span>ctict@cantho.gov.vn</a></li>
+            </ul>
+            <form action="#" class="subscribe">
+              <input type="text" class="form-control" placeholder="Nhập email để được hỗ trợ!">
+              <input type="submit" class="btn btn-submit" value="Gửi" style="background-color: #007bff; color: #ffffff; border: none;">
+            </form>
+          </div>
+          <div class="col-md mb-6 mb-md-0">
+          <h3 class="map">Bản đồ</h3>
+    <div class="map-container">
+        <!-- Thay thế đường link dưới đây bằng đường link của bản đồ của bạn -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d125714.36043140934!2d105.6910632!3d10.0519873!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x317529355ce4f133%3A0x2a0b5c0e18ce6635!2zMDEgxJAuIEPDoWNoIE3huqFuZyBUaMOhbmcgOCwgVMOibiBBbiwgTmluaCBLaeG7gXUsIEPhuqduIFRoxqE!3m2!1d10.051997499999999!2d105.7734651!5e0!3m2!1sen!2s!4v1726133734920!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-</footer>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h3>Chứng chỉ</h3>
+            <div class="row gallery">
+              <div class="col-6">
+                <a href="#"><img src="./public/footer/images/handle_cert.png" alt="Image" class="img-fluid"></a>
+                <!-- <a href="#"><img src="./public/footer/images/handle_cert.png" alt="Image" class="img-fluid"></a> -->
+              </div>
+              <div class="col-6">
+              <!-- <a href="#"><img src="./public/footer/images/handle_cert.png" alt="Image" class="img-fluid"></a> -->
+
+                <!-- <a href="#"><img src="./public/footer/images/img_4.jpg" alt="Image" class="img-fluid"></a> -->
+              </div>
+            </div>
+          </div>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./public/footer/js/jquery-3.3.1.min.js"></script>
+  <script src="./public/footer/js/popper.min.js"></script>
+  <script src="./public/footer/js/bootstrap.min.js"></script>
+</body>
+
+</html>
