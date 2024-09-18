@@ -124,7 +124,6 @@
         </div></ul>
     </header>
 
-    <div style="background-color: #fff">
 
     <!-- Slide Section -->
     <div class="slide-container">
