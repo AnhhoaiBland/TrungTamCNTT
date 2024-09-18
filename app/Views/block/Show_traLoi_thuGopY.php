@@ -113,7 +113,7 @@
 
                     <ul class="comments">
                         <li class="clearfix">
-                            <img src=<?= base_url('public/icons/logo_1732023143957.png') ?> class="avatar" alt="">
+                            <img src=<?= base_url('public/icons/logo.png') ?> class="avatar" alt="">
                             <div class="post-comments">
                                 <p class="meta"> <?php echo WEB_TITLE; echo " ".date('d/m/Y', strtotime($thu_gop_y['thoiGianPhanHoi'])) ?><a href="#"> </a> <i class="pull-right"><a href="#"></a></i></p>
                                 <div style="max-height: 300px; overflow-y: auto;">

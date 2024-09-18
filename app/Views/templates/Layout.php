@@ -32,7 +32,7 @@
     <script src=<?= base_url("public/assets/template/js/jquery.imagezoom.js") ?>></script>
 
     <style>
-        /* Style the list */
+        Style the list
         ul.breadcrumb {
             padding: 10px 16px;
             list-style: none;
@@ -61,7 +61,7 @@
         /* Add a color on mouse-over */
         ul.breadcrumb li a:hover {
             color: #01447e;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
         .breadcrumb .active {
@@ -92,6 +92,22 @@
                 padding: 4px;
             }
         }
+        .section-title{
+            text-decoration: none;
+        }
+
+        .section-title a {
+            text-decoration: none; 
+            background-color: #bddcfe;
+            color: #000;
+            padding: 4.5px;
+            border-radius: 5px;
+        }
+
+
+
+    
+
     </style>
 </head>
 
@@ -104,7 +120,7 @@
     <?php if (!empty($breadcrumb)) { ?>
         <div class='container'>
             <ul class="breadcrumb">
-                <!-- <li><a href=<?= base_url() ?>> Trang chủ </a></li> -->
+                
                 <?php
                 $url = current_url();
                 $parsedUrl = parse_url($url);
@@ -124,48 +140,46 @@
 
 
     <div class="container">
-        <div class="row">
+    <div class="row">
 
-            <div class="col-md-9">
+        <div class="col-md-9">
+            <!-- nạp trang -->
+            <?php echo $page ?>
+            <!-- end add page -->
+        </div>
 
-                <!-- nạp trang -->
+        <div class="col-md-3">
+            <!-- Phần panel -->
+            <?php $dataPa['dataPanel'] = $dataPanel;
+            echo view('templates/PanelCanh', $dataPa) ?>
 
+            <!-- Phần liên kết web -->
+            <?php echo view('block/Show_lienKetWeb') ?>
 
-                <?php echo $page ?>
-
-                <!-- end add page -->
-
-            </div>
-
-            <div class="col-md-3">
-                <?php $dataPa['dataPanel'] = $dataPanel;
-                echo view('templates/PanelCanh', $dataPa) ?>
-
-                <?php echo view('block/Show_lienKetWeb') ?>
-
-                 <?php if ($showTVVideo) { ?>
+            <!-- Phần thư viện video -->
+            <?php if ($showTVVideo) { ?>
+                <div class="section-title video-title">
                     <?php
                     $dat['title'] = "THƯ VIỆN VIDEO";
                     $dat['url'] = "/thu-vien-video";
                     echo view('block/Show_thuVienAnh_video', $dat) ?>
-                <?php } ?>
-
-                <?php if ($showTVAnh) { ?>
+                </div>
+            <?php } ?>
+               
+            <!-- Phần thư viện hình ảnh -->
+            <?php if ($showTVAnh) { ?>
+                <div class="section-title image-title">
                     <?php
                     $dat['title'] = "THƯ VIỆN HÌNH ẢNH";
                     $dat['url'] = "/thu-vien-anh";
                     echo view('block/Show_thuVienAnh_video', $dat) ?>
-                <?php } ?>
-
-               
-
-
-            </div>
-
+                </div>
+            <?php } ?>
         </div>
-      
 
     </div>
+</div>
+
 
     <?php $dt_luoc_tc['luoc_truy_cap'] = $luoc_truy_cap;
     echo view('templates/Footer', $dt_luoc_tc) ?>
