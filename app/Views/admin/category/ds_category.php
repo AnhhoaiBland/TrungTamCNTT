@@ -14,7 +14,7 @@
 
 		<table class="table table-bordered" id="datatable">
 			<thead>
-				<td>ID</td>
+				<td>STT</td>
 				<td>Tên chuyên mục</td>
 				<td>Đường dẫn</td>
 				<td>SL bài viết</td>

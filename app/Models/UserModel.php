@@ -21,7 +21,7 @@ class UserModel extends BaseModel
             $encrypter = \Config\Services::encrypter();
 
             $passDB_de = $encrypter->decrypt(hex2bin($passDB));
-			//echo $passDB_de; exit();
+			// echo $passDB_de; exit();
 
             if ($passDB_de !== $pass) {
                 return "Mật khẩu không chính xác";

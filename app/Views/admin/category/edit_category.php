@@ -16,11 +16,12 @@
 						<input type="hidden" name="id" value="" id="txt_IdEdit">
 					</div>
 					<div class="form-group">
-						<label for="">alias</label>
+						<label for="">Đường dẫn </label>
 						<input type="text" name="alias" class="form-control" id="txt_AliasEdit">
 					</div>
 
 					<div class="form-group">
+					<label for="">Nhóm chuyên mục </label>
 						<select name="category_cha" id="txt_category_cha" class="form-control">
 							<option value="" id="defaultOption">Không có</option>
 							<!-- <input id="nameUpdateHtml"type='text'></input> -->
@@ -35,7 +36,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="submit" form="frmEditCategory" class="btn btn-warning">Cập nhật</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
 				</div>
 			</div>
 		</form>
