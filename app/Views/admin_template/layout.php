@@ -15,7 +15,8 @@
 
 	<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="public/assets/admin_template/plugins/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="<?= base_url('public/assets/admin_template/plugins/fontawesome-free/css/all.min.css'); ?>">
+
 	<link rel="stylesheet" href="public/assets/font-awesome/css/font-awesome.css">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -64,6 +65,130 @@
 	<link rel="stylesheet" href=<?= base_url("public/plugins/toastr/toastr.min.css") ?>>
 	<link rel="stylesheet" href="public/assets/vanilla-js-tabs/vanilla-js-tabs.css">
 
+	<style>
+    /* Tổng quát */
+    .wrapper {
+        font-family: 'Poppins', sans-serif; /* Font chữ hiện đại */
+    }
+
+    /* Navbar */
+    .main-header {
+        background-color: #343a40; /* Màu nền tối cho navbar */
+        color: white;
+    }
+
+    .main-header .navbar-nav .nav-link {
+        color: white; /* Màu chữ trắng */
+    }
+
+    .main-header .navbar-nav .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Hiệu ứng hover */
+    }
+
+    /* Sidebar */
+    .main-sidebar {
+        background-color: #212529; /* Màu nền tối cho sidebar */
+        height: 100%; /* Chiều cao sidebar */
+    }
+
+    .main-sidebar .brand-link {
+        color: #ffffff; /* Màu chữ cho brand */
+        text-align: center; /* Căn giữa brand */
+    }
+
+    .main-sidebar .nav-link {
+        color: #b8c7ce; /* Màu chữ cho sidebar */
+    }
+
+    .main-sidebar .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Hiệu ứng hover */
+        color: white; /* Màu chữ khi hover */
+    }
+
+    .main-sidebar .nav-icon {
+        color: #ffffff; /* Màu icon */
+    }
+
+    /* User Panel */
+    .user-panel {
+        background-color: rgba(255, 255, 255, 0.1); /* Nền mờ cho user panel */
+        border-radius: 5px; /* Bo góc cho user panel */
+        margin-bottom: 15px; /* Khoảng cách dưới user panel */
+    }
+
+    .user-panel .info {
+        color: white; /* Màu chữ cho thông tin người dùng */
+    }
+
+    .user-panel .info a {
+        color: #ff5b5b; /* Màu chữ cho link đăng xuất */
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+        background-color: #ffffff; /* Màu nền trắng cho nội dung */
+        border-radius: 10px; /* Bo góc */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+        padding: 20px; /* Padding cho nội dung */
+        margin: 20px; /* Khoảng cách với các thành phần khác */
+    }
+
+    /* Footer */
+    .main-footer {
+        background-color: #343a40; /* Màu nền tối cho footer */
+        color: white;
+        text-align: center; /* Căn giữa chữ */
+    }
+
+    .main-footer a {
+        color: #ffcc00; /* Màu chữ cho link trong footer */
+    }
+
+    /* Hiệu ứng khi sidebar thu nhỏ */
+    .sidebar-collapse .nav-link {
+        font-size: 0.9em; /* Giảm kích thước chữ khi thu nhỏ */
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .main-header .navbar-nav {
+            flex-direction: column; /* Đổi chiều navbar khi trên thiết bị nhỏ */
+        }
+    }
+	.user-panel {
+        background-color: rgba(255, 255, 255, 0.1); /* Nền mờ cho user panel */
+        border-radius: 5px; /* Bo góc cho user panel */
+        margin-bottom: 15px; /* Khoảng cách dưới user panel */
+        display: flex; /* Sử dụng flex để căn giữa */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        padding: 10px; /* Padding cho user panel */
+    }
+
+    .user-panel .image {
+        margin-right: 10px; /* Khoảng cách giữa ảnh và thông tin */
+    }
+
+    .user-panel .image img {
+        width: 50px; /* Đặt kích thước ảnh */
+        height: 50px; /* Đặt kích thước ảnh */
+    }
+
+    .user-panel .info {
+        color: white; /* Màu chữ cho thông tin người dùng */
+        flex-grow: 1; /* Cho phép chiếm không gian còn lại */
+    }
+
+    .user-panel .info a {
+        color: #ff5b5b; /* Màu chữ cho link đăng xuất */
+        text-decoration: none; /* Bỏ gạch chân */
+    }
+
+    .user-panel .info a:hover {
+        text-decoration: underline; /* Gạch chân khi hover */
+    }
+</style>
+
+
 
 
 </head>
@@ -99,16 +224,17 @@
 			<div class="sidebar">
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
-					<div class="image">
-						<img src="public/assets/admin_template/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-					</div>
-					<div class="info">
-						<span class="d-block text-white" id="view_infor" style="cursor: pointer;"><? $tenDangNhap = $data[0]['tenDangNhap'];
-																									echo $tenDangNhap ?></span>
-						<br>
-						<a href="dangxuat">Đăng xuất</a>
-					</div>
-				</div>
+    <div class="image">
+        <img src="public/assets/admin_template/dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+    </div>
+    <div class="info">
+        <span class="d-block text-white" id="view_infor" style="cursor: pointer;"><?php $tenDangNhap = $data[0]['tenDangNhap']; echo $tenDangNhap ?></span>
+        <br>
+        <a href="<?= site_url('user/logout') ?>">Đăng xuất</a>
+
+    </div>
+</div>
+
 
 				<!-- Sidebar Menu -->
 				<nav class="mt-2">
@@ -332,7 +458,7 @@
 							<?php foreach ($danhSachChucNang as $ChucNang) {
 								if ($ChucNang['urlChucNang'] == '/admin/hopthu') { ?>
 									<li class="nav-item has-treeview">
-										<a href="admin/hopthu" class="nav-link">
+										<a href="admin/thu_gopy" class="nav-link">
 											<i class="nav-icon fa fa-envelope"></i>
 											<p>
 												Hộp thư góp ý

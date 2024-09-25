@@ -15,7 +15,7 @@
             <input type="text" id="tenChuyenMuc" name="ten" class="form-control" required>
           </div>
           <div class="form-group">
-            <label for="">alias</label>
+            <label for="">Đường dẫn </label>
             <input type="text" id="alias" name="alias" class="form-control">
           </div>
           <div class="form-group">

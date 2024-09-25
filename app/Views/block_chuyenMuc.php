@@ -45,7 +45,7 @@
 
 <div class="pb-3 pt-5 block_ditich_hinh bg-body p-4">
     <div class="block_ditich_hinh_header block_title">
-        <a style="font-size: 18px;" class="text-white" href="page/CAT_ALIAS_NAME_SAMPLE"><?= $title ?></a>
+        <a style="font-size: 18px;" class="text-white" href="<?= $url_cate ?>"><?= $title ?></a>
     </div>
     <hr>
     <div class="block_ditich_hinh_content">
@@ -55,11 +55,11 @@
                     <div class="col-md-4">
                         <div class="show_baiviet_hinh_3cot_khung">
                             <div class="show_baiviet_hinh_3cot_image" style="background: url('media/images/BV_HINH_ANH_SAMPLE') center center; background-size: cover;">
-                                <img src="<?= base_url('upload/media/images/' . ($baidang['anhTieuDe'] != NULL ? $baidang['anhTieuDe'] : 'image_blank.jpg')) ?>" alt="Image 1">
+                                <img src="<?= base_url('upload/media/images/' . ($baidang['anhTieuDe'] ?? 'image_blank.jpg')) ?>" alt="<?= esc($baidang['tieuDe']) ?>">
                                 <div class="show_baiviet_hinh_3cot_bg"></div>
                                 <div class="show_baiviet_hinh_3cot_title">
                                     <a href="<?= $baidang['urlBaiDang'] ? base_url('/bv/' . $baidang['urlBaiDang']) : base_url('/bv/' . $baidang['maBaiDang']) ?>">
-                                        <?= $baidang['tieuDe'] ?>
+                                        <?= esc($baidang['tieuDe']) ?>
                                     </a>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                 <?php endforeach ?>
             </div>
         <?php else : ?>
-            Nội dung đang cập nhật
+            <p>Nội dung đang cập nhật</p>
         <?php endif ?>
     </div>
 </div>

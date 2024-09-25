@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 
 // Public Routes
 $routes->get('/', 'HomeController::index');
+$routes->post('/login', 'UserController::login');
 $routes->get('/index_v2', 'HomeController::index_v2');
 $routes->get('/home/ajax_getpaneltop', 'HomeController::ajax_getpaneltop');
 $routes->get('upload/media/images/(:segment)', 'FileController::show_anh/$1');
@@ -50,95 +51,109 @@ $routes->post('/admin/ajax_xoaAllAnhChiTiet', 'DaPhuongTienController::ajax_xoaA
 $routes->post('/admin/ajax_duyetBST', 'DaPhuongTienController::ajax_duyetBST');
 $routes->post('/admin/ajax_Huy_duyetBST', 'DaPhuongTienController::ajax_Huy_duyetBST');
 $routes->post('/admin/ajax_layinfoBST', 'DaPhuongTienController::ajax_layinfoBST');
+$routes->post('/admin/ajax_sua_category', 'ChuyenMucController::ajax_sua_category');
+$routes->post('/admin/ajax_duyetBaiDang', 'BaiDangController::ajax_duyetBaiDang');
+$routes->post('/admin/ajax_Huy_duyetBaiDang', 'BaiDangController::ajax_Huy_duyetBaiDang');
 
-// Admin Routes
-$routes->group('admin', function($routes) {
-    $routes->get('/', 'UserController::index');
-    $routes->get('/dangxuat', 'UserController::logout');
-    
-    $routes->get('/thongtinweb', 'ThongTinWebController::index');
-    $routes->post('/luuthongtinweb', 'ThongTinWebController::luuthongtinweb');
-    
-    $routes->get('/ds_taikhoan', 'UserController::ds_taikhoan');
-    $routes->post('/add_user', 'UserController::add_user');
-    $routes->post('/edit_user', 'UserController::edit_user');
-    $routes->post('/change_pass_user', 'UserController::change_pass_user');
-    $routes->post('/lock_user', 'UserController::lock_user');
-    $routes->post('/unlock_user', 'UserController::unlock_user');
-    $routes->post('/del_user', 'UserController::del_user');
-    
-    $routes->get('/dstacvu', 'TacVuController::index');
-    $routes->post('/addtacvu', 'TacVuController::addtacvu');
-    $routes->post('/xoatacvu', 'TacVuController::xoatacvu');
-    $routes->post('/capnhattacvu', 'TacVuController::capnhattacvu');
-    $routes->get('/them_quyen_cho_nhom/(:any)', 'TacVuController::them_quyen_cho_nhom/$1');
-    $routes->post('/them_chuc_nang_vao_nhom', 'TacVuController::them_chuc_nang_vao_nhom');
-    $routes->post('/xoa_chuc_nang_khoi_nhom', 'TacVuController::xoa_chuc_nang_khoi_nhom');
-    $routes->post('/them_moi_nhom_quyen', 'TacVuController::them_moi_nhom_quyen');
-    $routes->get('/nhomChucNang', 'TacVuController::nhomChucNang_dsNhomCN');
-    $routes->post('/xoa_nhom_quyen', 'TacVuController::xoa_nhom_quyen');
-    $routes->post('/capNhat_nhom_quyen', 'TacVuController::capNhat_nhom_quyen');
-    
-    $routes->get('/ds_loainguoidung', 'UserController::laydanhsachloaind');
-    $routes->post('/addloainguoidung', 'UserController::addloainguoidung');
-    $routes->post('/xoaloainguoidung', 'UserController::xoaloainguoidung');
-    $routes->post('/editloainguoidung', 'UserController::editloainguoidung');
-    $routes->post('/themtacvuchonloaind', 'UserController::themtacvuchonloaind');
-    
-    $routes->get('/vanban', 'TaiLieuController::index');
-    $routes->get('/ajax_laydsloaitl', 'TaiLieuController::ajax_laydsloaitl');
-    $routes->post('/addloaitailieu', 'TaiLieuController::addloaitailieu');
-    $routes->post('/editloaitailieu', 'TaiLieuController::editloaitailieu');
-    $routes->post('/xoaloaitailieu', 'TaiLieuController::xoaloaitailieu');
-    $routes->post('/themmoitailieu', 'TaiLieuController::themmoitailieu');
-    $routes->post('/capnhattailieu', 'TaiLieuController::capnhattailieu');
-    $routes->post('/xoatailieu', 'TaiLieuController::xoatailieu');
-    
-    $routes->get('/panel', 'PanelController::index');
-    $routes->post('/add_panel', 'PanelController::add_panel');
-    $routes->get('/xoa_panel', 'PanelController::xoa_panel');
-    $routes->post('/sua_panel', 'PanelController::sua_panel');
-    
-    $routes->get('/ds_category', 'ChuyenMucController::index');
-    $routes->post('/add_category', 'ChuyenMucController::add_category');
-    $routes->post('/sua_category', 'ChuyenMucController::sua_category');
-    $routes->get('/xoa_category', 'ChuyenMucController::xoa_category');
-    
-    $routes->get('/ds_baidang', 'BaiDangController::index');
-    $routes->get('/add_baidang', 'BaiDangController::add_baidang');
-    $routes->post('/save_baidang', 'BaiDangController::save_baidang');
-    $routes->get('/edit_baidang/(:any)', 'BaiDangController::edit_baidang/$1');
-    $routes->post('/save_update_baidang/(:any)', 'BaiDangController::save_update_baidang/$1');
-    $routes->get('/delete_baidang/(:any)', 'BaiDangController::delete_baidang/$1');
-    $routes->post('/duyet_baidang', 'BaiDangController::duyet_baidang');
-    $routes->post('/huy_duyet_baidang', 'BaiDangController::huy_duyet_baidang');
-    
-    $routes->get('/thu_gopy', 'ThuGopYController::index');
-    $routes->post('/delete_gopy', 'ThuGopYController::delete_gopy');
-    $routes->post('/duyet_gopy', 'ThuGopYController::duyet_gopy');
-    $routes->post('/huy_duyet_gopy', 'ThuGopYController::huy_duyet_gopy');
-    $routes->post('/them_phan_hoi', 'ThuGopYController::them_phan_hoi');
-    
-    $routes->get('/thong_ke', 'ThongKeController::index');
-    $routes->post('/ajax_thongke', 'ThongKeController::ajax_thongke');
-    
-    $routes->get('/banner', 'BannerController::index');
-    $routes->post('/add_banner', 'BannerController::add_banner');
-    $routes->post('/edit_banner', 'BannerController::edit_banner');
-    $routes->post('/delete_banner', 'BannerController::delete_banner');
-    
-    $routes->get('/thu-vien', 'DaPhuongTienController::index');
-    $routes->post('/upload_anh', 'DaPhuongTienController::upload_anh');
-    $routes->post('/upload_video', 'DaPhuongTienController::upload_video');
-    $routes->post('/upload_file', 'DaPhuongTienController::upload_file');
-    $routes->post('/xoa_anh', 'DaPhuongTienController::xoa_anh');
-    $routes->post('/xoa_all_anh', 'DaPhuongTienController::xoa_all_anh');
-    $routes->post('/duyet_anh', 'DaPhuongTienController::duyet_anh');
-    $routes->post('/huy_duyet_anh', 'DaPhuongTienController::huy_duyet_anh');
-    
-    $routes->get('/danh_sach', 'DanhSachController::index');
-    $routes->post('/add_danh_sach', 'DanhSachController::add_danh_sach');
-    $routes->post('/edit_danh_sach', 'DanhSachController::edit_danh_sach');
-    $routes->post('/delete_danh_sach', 'DanhSachController::delete_danh_sach');
-});
 
+
+
+// User Management
+$routes->get('admin', 'UserController::index');
+$routes->get('user/logout', 'UserController::logout');
+$routes->post('admin/add_user', 'UserController::add_user');
+$routes->post('admin/edit_user', 'UserController::edit_user');
+$routes->post('admin/change_pass_user', 'UserController::change_pass_user');
+$routes->post('admin/lock_user', 'UserController::lock_user');
+$routes->post('admin/unlock_user', 'UserController::unlock_user');
+$routes->post('admin/del_user', 'UserController::del_user');
+
+// Web Information
+$routes->get('admin/thongtinweb', 'ThongTinWebController::index');
+$routes->post('admin/luuthongtinweb', 'ThongTinWebController::luuthongtinweb');
+
+// Task Management
+$routes->get('admin/dstacvu', 'TacVuController::index');
+$routes->get('admin/ds_taikhoan', 'UserController::ds_taikhoan');
+$routes->post('admin/addtacvu', 'TacVuController::addtacvu');
+$routes->post('admin/xoatacvu', 'TacVuController::xoatacvu');
+$routes->post('admin/capnhattacvu', 'TacVuController::capnhattacvu');
+$routes->get('admin/them_quyen_cho_nhom/(:any)', 'TacVuController::them_quyen_cho_nhom/$1');
+$routes->post('admin/them_chuc_nang_vao_nhom', 'TacVuController::them_chuc_nang_vao_nhom');
+$routes->post('admin/xoa_chuc_nang_khoi_nhom', 'TacVuController::xoa_chuc_nang_khoi_nhom');
+$routes->post('admin/them_moi_nhom_quyen', 'TacVuController::them_moi_nhom_quyen');
+$routes->get('admin/nhomChucNang', 'TacVuController::nhomChucNang_dsNhomCN');
+$routes->post('admin/xoa_nhom_quyen', 'TacVuController::xoa_nhom_quyen');
+$routes->post('admin/capNhat_nhom_quyen', 'TacVuController::capNhat_nhom_quyen');
+
+// User Role Management
+$routes->get('admin/ds_loainguoidung', 'UserController::laydanhsachloaind');
+$routes->post('admin/addloainguoidung', 'UserController::addloainguoidung');
+$routes->post('admin/xoaloainguoidung', 'UserController::xoaloainguoidung');
+$routes->post('admin/editloainguoidung', 'UserController::editloainguoidung');
+$routes->post('admin/themtacvuchonloaind', 'UserController::themtacvuchonloaind');
+
+// Document Management
+$routes->get('admin/vanban', 'TaiLieuController::index');
+$routes->get('admin/ajax_laydsloaitl', 'TaiLieuController::ajax_laydsloaitl');
+$routes->post('admin/addloaitailieu', 'TaiLieuController::addloaitailieu');
+$routes->post('admin/editloaitailieu', 'TaiLieuController::editloaitailieu');
+$routes->post('admin/xoaloaitailieu', 'TaiLieuController::xoaloaitailieu');
+$routes->post('admin/themmoitailieu', 'TaiLieuController::themmoitailieu');
+$routes->post('admin/capnhattailieu', 'TaiLieuController::capnhattailieu');
+$routes->post('admin/xoatailieu', 'TaiLieuController::xoatailieu');
+
+// Panel Management
+$routes->get('admin/panel', 'PanelController::index');
+$routes->post('admin/add_panel', 'PanelController::add_panel');
+$routes->get('admin/xoa_panel', 'PanelController::xoa_panel');
+$routes->post('admin/sua_panel', 'PanelController::sua_panel');
+
+// Category Management
+$routes->get('admin/ds_category', 'ChuyenMucController::index');
+$routes->post('admin/add_category', 'ChuyenMucController::add_category');
+$routes->post('admin/sua_category', 'ChuyenMucController::sua_category');
+$routes->get('admin/xoa_category', 'ChuyenMucController::xoa_category');
+
+// Post Management
+$routes->get('admin/ds_baidang', 'BaiDangController::index');
+$routes->get('admin/add_baidang', 'BaiDangController::add_baidang');
+$routes->post('admin/save_baidang', 'BaiDangController::save_baidang');
+$routes->get('admin/edit_baidang/(:any)', 'BaiDangController::edit_baidang/$1');
+$routes->post('admin/save_update_baidang/(:any)', 'BaiDangController::save_update_baidang/$1');
+$routes->get('admin/delete_baidang/(:any)', 'BaiDangController::delete_baidang/$1');
+$routes->post('admin/duyet_baidang', 'BaiDangController::duyet_baidang');
+$routes->post('admin/huy_duyet_baidang', 'BaiDangController::huy_duyet_baidang');
+
+// Feedback Management
+$routes->get('admin/thu_gopy', 'ThuGopYController::hopthu');
+$routes->post('admin/delete_gopy', 'ThuGopYController::delete_gopy');
+$routes->post('admin/duyet_gopy', 'ThuGopYController::duyet_gopy');
+$routes->post('admin/huy_duyet_gopy', 'ThuGopYController::huy_duyet_gopy');
+$routes->post('admin/them_phan_hoi', 'ThuGopYController::them_phan_hoi');
+
+// Statistics
+$routes->get('admin/thong_ke', 'ThongKeController::index');
+$routes->post('admin/ajax_thongke', 'ThongKeController::ajax_thongke');
+
+// Banner Management
+$routes->get('admin/banner', 'BannerController::index');
+$routes->post('admin/add_banner', 'BannerController::add_banner');
+$routes->post('admin/edit_banner', 'BannerController::edit_banner');
+$routes->post('admin/delete_banner', 'BannerController::delete_banner');
+
+// Resource Management
+$routes->get('admin/thu-vien', 'DaPhuongTienController::index');
+$routes->post('admin/upload_anh', 'DaPhuongTienController::upload_anh');
+$routes->post('admin/upload_video', 'DaPhuongTienController::upload_video');
+$routes->post('admin/upload_file', 'DaPhuongTienController::upload_file');
+$routes->post('admin/xoa_anh', 'DaPhuongTienController::xoa_anh');
+$routes->post('admin/xoa_all_anh', 'DaPhuongTienController::xoa_all_anh');
+$routes->post('admin/duyet_anh', 'DaPhuongTienController::duyet_anh');
+$routes->post('admin/huy_duyet_anh', 'DaPhuongTienController::huy_duyet_anh');
+
+// List Management
+$routes->get('admin/danh_sach', 'DanhSachController::index');
+$routes->post('admin/add_danh_sach', 'DanhSachController::add_danh_sach');
+$routes->post('admin/edit_danh_sach', 'DanhSachController::edit_danh_sach');
+$routes->post('admin/delete_danh_sach', 'DanhSachController::delete_danh_sach');

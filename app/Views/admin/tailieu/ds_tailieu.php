@@ -1,3 +1,17 @@
+<style>
+	.btn1-container {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo cột */
+    gap: 5px; /* Khoảng cách giữa các nút */
+}
+
+.btn1 {
+    width: 100%; /* Chiều rộng của các nút */
+}
+
+
+</style>
+
 <div class="row">
 	<div class="col-md-12">
 		<h3>Quản lý tài liệu</h3>
@@ -17,12 +31,12 @@
 			<thead>
 				<td>Số</td>
 				<td>Tên tài liệu</td>
-				<td>Thời gian có hiệu lực</td>
+				<td>Thời gian<br> có hiệu lực</td>
 				<td>Loại tài liệu</td>
 				<td>Ngày đăng tải</td>
-				<td>User đăng tải</td>
+				<td>User<br> đăng tải</td>
 				<td>Ngày cập nhật</td>
-				<td>User cập nhật</td>
+				<td>User<br> cập nhật</td>
 				<td>URL</td>
 				<?php if ($checkQuyen == '1') { ?>
 					<td>Action</td>
@@ -64,10 +78,12 @@
 							</td>
 							<?php if ($checkQuyen == '1') { ?>
 								<td class="text-right" style="min-width: 100px;">
-									<button class="btn btn-warning btnSua"><i class="fa fa-edit"></i></button>
-									<button class="btn btn-danger btnXoa"><i class="fa fa-trash"></i></button>
+    <div class="btn1-container">
+        <button class="btn btn-warning btnSua"><i class="fa fa-edit"></i></button>
+        <button class="btn btn-danger btnXoa"><i class="fa fa-trash"></i></button>
+    </div>
+</td>
 
-								</td>
 							<?php } ?>
 						</tr>
 					<?php endforeach; ?>

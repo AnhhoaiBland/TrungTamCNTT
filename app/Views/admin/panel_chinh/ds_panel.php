@@ -1,3 +1,17 @@
+<style>
+	.btn1-container {
+		display: flex;
+		flex-direction: column; /* Sắp xếp theo cột */
+		gap: 5px; /* Khoảng cách giữa các nút */
+	}
+
+	.btn1 {
+		width: 100%; /* Chiều rộng của các nút */
+		height: 50px; /* Chiều cao của các nút */
+		margin: 5px;
+	}
+</style>
+
 <div class="row">
 	<div class="col-md-12">
 		<h3>Quản lý panel chính</h3>
@@ -15,7 +29,7 @@
 
 		<table class="table table-bordered" id="datatable">
 			<thead>
-				<td width="350px">hình ảnh</td>
+				<td width="350px">Hình ảnh</td>
 				<td>Liên kết</td>
 				<td>User tạo</td>
 				<td>Ngày tạo</td>
@@ -39,7 +53,7 @@
 						<td> <?= $panel['ngayCapNhat'] ?> </td>
 						<td> <?= $panel['viTri'] == '1' ? "panel trang chủ" : "panel cạnh" ?> </td>
 						<?php if ($checkQuyen == '1') { ?>
-							<td class="text-right">
+							<td class="btn1-container">
 								<button class="btn btn-warning btnSua"><i class="fa fa-edit"></i></button>
 								<button class="btn btn-danger btnXoa"><i class="fa fa-trash"></i></button>
 							</td>
@@ -58,9 +72,9 @@
 
 <script>
 	$(document).ready(function() {
-		$('#datatable').treetable({
-			expandable: true,
-		});
+		// $('#datatable').treetable({
+		// 	expandable: true,
+		// });
 		// var table = $('#datatable').DataTable({
 		// 	"language": {
 		//         "url": "assets/datatable/Vietnamese.json"
@@ -138,7 +152,7 @@
 			var id = row.attr('data-id'); // accessing data-id directly from row variable
 
 			$.ajax({
-				url: 'admin/ajax_sua_panel',
+				url: 'admin/sua_panel',
 				type: 'POST',
 				data: {
 					id: id

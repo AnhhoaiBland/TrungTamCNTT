@@ -3,13 +3,13 @@
         margin-top: 10px;
         border: 1px solid #eeeeee;
         padding: 3px;
-        height: 270px;
+        height: 100%;
         overflow: hidden;
         position: relative;
     }
 
     .show_baiviet_hinh_3cot_image {
-        height: 222px;
+        height: 200px;
         overflow: hidden;
     }
 
@@ -24,10 +24,22 @@
     }
 
     .show_baiviet_hinh_3cot_title a {
-        color: #ffffff;
-    }
+    display: inline-block;
+    white-space: nowrap; /* Không xuống dòng */
+    overflow: hidden; /* Ẩn phần vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm */
+    max-width: 230px; /* Giới hạn chiều rộng tiêu đề */
+    vertical-align: middle;
+    text-decoration: none;
+    color: #eeeeee;
+}
 
-    .show_baiviet_hinh_3cot_bg {
+.show_baiviet_hinh_3cot_title a:hover {
+    text-decoration: none;
+    color: #87ceeb;
+}
+
+.show_baiviet_hinh_3cot_bg {
         width: calc(100% - 6px);
         font-weight: 600;
         left: 0;
@@ -37,7 +49,7 @@
         position: absolute;
         margin: 3px;
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(50, 50, 50, 1), rgba(50, 50, 50, 1));
-    }
+}
 </style>
 
 
@@ -57,7 +69,7 @@
                                 <div class="show_baiviet_hinh_3cot_bg"></div>
                                 <div class="show_baiviet_hinh_3cot_title">
                                     <a href="<?= $baidang['urlBaiDang'] ? base_url('/bv/' . $baidang['urlBaiDang']) : base_url('/bv/' . $baidang['maBaiDang']) ?>">
-                                        <?= $baidang['tieuDe'] ?>
+                                        <?= $baidang['tieuDe'] ?> 
                                     </a>
                                 </div>
                             </div>

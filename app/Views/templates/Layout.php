@@ -2,35 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?= base_url() . "upload/media/images/" . $logo ?>" type="image/x-icon">
-    <title><?=WEB_TITLE ?></title>
-    <link rel="stylesheet" type="text/css" href=<?= base_url("public/templates/style.css") ?> />
-    <link href=<?= base_url("public/assets/admin_template/plugins/fontawesome-free/css/all.min.css") ?> rel="stylesheet">
-    <link href=<?= base_url("public/assets/font-awesome/css/font-awesome.css") ?> rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href=<?= base_url("public/bootstrap513/bootstrap.min.css") ?> />
-    <link rel="stylesheet" type="text/css" href=<?= base_url("public/icons/icon.css") ?> />
-    <link rel="stylesheet" type="text/css" href=<?= base_url("public/assets/template/css/slicknav.min.css") ?>>
-    <link rel="stylesheet" type="text/css" href=<?= base_url("public/assets/template/css/style.css") ?> media="all" />
+    <title><?= WEB_TITLE ?></title>
 
-    <link rel="stylesheet" type="text/css" href=<?= base_url("public/assets/swiper/swiper-bundle.min.css") ?> media="all" />
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" type="text/css" href=<?= base_url("public/assets/template/css/responsive.css") ?> media="all" />
-    <script src=<?= base_url("public/assets/template/js/jquery.min.js") ?>></script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url("public/templates/style.css") ?>" />
+    <link href="<?= base_url("public/assets/admin_template/plugins/fontawesome-free/css/all.min.css") ?>" rel="stylesheet">
+    <link href="<?= base_url("public/assets/font-awesome/css/font-awesome.css") ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url("public/bootstrap513/bootstrap.min.css") ?>" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url("public/icons/icon.css") ?>" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url("public/assets/template/css/slicknav.min.css") ?>" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url("public/assets/template/css/style.css") ?>" media="all" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url("public/assets/swiper/swiper-bundle.min.css") ?>" media="all" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url("public/assets/template/css/responsive.css") ?>" media="all" />
+    
 
-    <!-- <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/blogs/blog-5/assets/css/blog-5.css"> -->
-    <!-- <script src="summernote-0.8.18-dist/jquery-3.5.1.min.js"></script> -->
-    <!-- public\templates\summernote-0.8.18-dist\summernote-lite.min.css -->
-    <link href=<?= base_url("public/templates/summernote-0.8.18-dist/summernote-lite.min.css") ?> rel="stylesheet">
-    <script src=<?= base_url("public/templates/summernote-0.8.18-dist/summernote-lite.min.js") ?>></script>
-
-    <script src=<?= base_url("public/assets/template/js/owl.carousel.min.js") ?>></script>
-    <script src=<?= base_url("public/assets/template/js/isotope-3.0.4.min.js") ?>></script>
-    <script src=<?= base_url("public/assets/template/js/jquery.bxslider.min.js") ?>></script>
-    <script src=<?= base_url("public/assets/template/js/wow-1.3.0.min.js") ?>></script>
-    <script src=<?= base_url("public/assets/template/js/jquery.imagezoom.js") ?>></script>
-
+    <!-- JavaScript Files -->
+    <script src="<?= base_url("public/assets/template/js/jquery.min.js") ?>"></script>
+    <script src="<?= base_url("public/assets/template/js/owl.carousel.min.js") ?>"></script>
+    <script src="<?= base_url("public/assets/template/js/isotope-3.0.4.min.js") ?>"></script>
+    <script src="<?= base_url("public/assets/template/js/jquery.bxslider.min.js") ?>"></script>
+    <script src="<?= base_url("public/assets/template/js/wow-1.3.0.min.js") ?>"></script>
+    <script src="<?= base_url("public/assets/template/js/jquery.imagezoom.js") ?>"></script>
+    <script src="<?= base_url("public/templates/summernote-0.8.18-dist/summernote-lite.min.js") ?>"></script>
     <style>
         Style the list
         ul.breadcrumb {
@@ -56,6 +52,7 @@
         ul.breadcrumb li a {
             color: #0275d8;
             text-decoration: none;
+            font-size: 20px;
         }
 
         /* Add a color on mouse-over */
@@ -105,7 +102,26 @@
         }
 
 
+        .container-home {
+    
+    max-width: 100rem; /* Giới hạn kích thước tối đa của container */
+    margin: 0 auto; /* Căn giữa container */
+    padding-left: 5px; /* Khoảng cách bên trái */
+    padding-right: 5px; /* Khoảng cách bên phải */
+}
 
+.section-title {
+    margin-bottom: 20px;
+    font-size: 18px; /* Kích thước chữ lớn hơn */
+    font-weight: bold;
+}
+
+.video-title, .image-title {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+        
     
 
     </style>
@@ -117,29 +133,17 @@
 
     echo view('templates/Header2', $dt) ?>
 
-    <?php if (!empty($breadcrumb)) { ?>
-        <div class='container'>
-            <ul class="breadcrumb">
-                
-                <?php
-                $url = current_url();
-                $parsedUrl = parse_url($url);
-                $pathParts = explode('/', $parsedUrl['path']);
-                $lastPathPart = end($pathParts);
-                foreach ($breadcrumb as $value) {
-                    $parsedUrl_Crum = parse_url($value['url']);
-                    $pathParts_Crum = explode('/', $parsedUrl_Crum['path']);
-                    $lastPathPart_Crum = end($pathParts_Crum);
-                ?>
-                    <li class=<?= $lastPathPart_Crum == $lastPathPart ? "active" : "" ?>><a href=<?= $value['url'] ?>><?= $value['title'] ?></a></li>
-                <?php } ?>
-            </ul>
-        </div>
-    <?php } ?>
+<?php if (!empty($breadcrumb)) { ?>
+    <div class='container'>
+        <ul class="breadcrumb1">
+            
+        </ul>
+    </div>
+<?php } ?>
 
 
 
-    <div class="container">
+    <div class="container-home">
     <div class="row">
 
         <div class="col-md-9">

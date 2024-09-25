@@ -29,22 +29,28 @@ class UserController extends BaseController
         //  echo print_r($data); exit();
         return $this->template_admin(view('admin_template/Page_welcome', $data));
     }
+
     public function ds_taikhoan()
-    {
-        $dataDS = $this->UserModel->layDanhSachNguoiDung();
-        $data['ds_user'] = $dataDS;
-        $data['checkQuyen'] = $this->check_nhom_quyen('nhomQ6649b8ac3e6631.02886338');
-        //  echo print_r($data); exit();
-        return $this->template_admin(view('admin/user/ds_user', $data));
-    }
+{
+    $dataDS = $this->UserModel->layDanhSachNguoiDung();
+    $data['ds_user'] = $dataDS;
+    $data['checkQuyen'] = $this->check_nhom_quyen('nhomQ6649b8ac3e6631.02886338');
+    
+    // Xóa hoặc bình luận dòng dưới đây để không hiển thị mảng dữ liệu trực tiếp
+    // echo print_r($data); exit();
+    
+    return $this->template_admin(view('admin/user/ds_user', $data));
+}
 
 
-    public function logout()
-    {
-        $session = session();
-        $session->destroy();
-        return redirect()->to('admin');
-    }
+public function logout()
+{
+    $session = session();
+    $session->destroy(); // Xóa session
+    return redirect()->to('admin'); // Chuyển hướng về trang login
+}
+
+
 
     public function login()
     {

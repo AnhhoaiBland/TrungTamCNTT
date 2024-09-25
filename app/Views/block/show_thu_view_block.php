@@ -40,95 +40,97 @@ function cut_text($text, $max_length, $ellipsis = '...')
 
 
 <style>
-	.card {
-		height: 250px;
-	}
+.card {
+    height: 250px;
+}
 
-	.card img {
-		height: 100px;
-		width: 100%;
-		object-fit: cover;
-	}
+.card img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
 
-	.pagination {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-	.active_a {
-		color: #11286e;
-		font-size: 15px;
-		font-weight: bold;
-	}
+.active_a {
+    color: #11286e;
+    font-size: 15px;
+    font-weight: bold;
+}
 
-	.pagination a {
-		color: black;
-		text-decoration: none;
-		padding: 8px 16px;
-		margin: 0 5px;
-		border-radius: 5px;
-		transition: background-color 0.3s;
-	}
+.pagination a {
+    color: black;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-	.pagination a:hover {
-		background-color: #f2f2f2;
-	}
+.pagination a:hover {
+    background-color: #f2f2f2;
+}
 
-	.pagination .current {
-		background-color: #4CAF50;
-		color: white;
-	}
+.pagination .current {
+    background-color: #4CAF50;
+    color: white;
+}
 </style>
 <div class="container bg-body pb-3 pt-3" style="min-height: 800px;">
-	<div class="row row-cols-1 row-cols-md-3 g-4">
-		<?php foreach ($ds_BoSuTap as $BoSuTap) {
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach ($ds_BoSuTap as $BoSuTap) {
 			$isImage = $BoSuTap['loai'] == 'im';
 			$url = $isImage ? base_url("view/" . $BoSuTap['maBoSuuTap']) : base_url("video/" . $BoSuTap['maBoSuuTap']);
 			$mediaSrc = $isImage ?
-				base_url('upload/media/images/' . ($BoSuTap['urlFile'] != NULL ? $BoSuTap['urlFile'] : 'image_blank.jpg')) :
-				base_url('upload/media/videos/' . ($BoSuTap['urlFile'] != NULL ? $BoSuTap['urlFile'] : 'image_blank.jpg'));
-			$mediaTag = $isImage ?
-				'<img src="' . $mediaSrc . '" class="card-img-top" alt="...">' :
-				'<video src="' . $mediaSrc . '" class="card-img-top" alt="..."></video>';
+    base_url('upload/media/images/' . ($BoSuTap['urlFile'] != NULL ? $BoSuTap['urlFile'] : 'image_blank.jpg')) :
+    base_url('upload/media/videos/' . ($BoSuTap['urlFile'] != NULL ? $BoSuTap['urlFile'] : 'video_blank.mp4'));
+
+	$mediaTag = $isImage ?
+    '<img src="' . $mediaSrc . '" class="card-img-top" alt="...">' :
+    '<video src="' . $mediaSrc . '" class="card-img-top" controls alt="..."></video>';
+
 		?>
-			<a href="<?= $url ?>" class="col">
-				<div class="card">
-					<?= $mediaTag ?>
-					<div class="card-body">
-						<p class="card-text"><?= cut_text(strip_tags($BoSuTap['tenBoSuuTap']), 50) ?></p>
-					</div>
-					<div class="card-footer">
-						<small class="text-body-secondary"><?= date('d-m-y', strtotime($BoSuTap['ngayTao'])) ?></small>
-					</div>
-				</div>
-			</a>
-		<?php } ?>
-	</div>
+        <a href="<?= $url ?>" class="col">
+            <div class="card">
+                <?= $mediaTag ?>
+                <div class="card-body">
+                    <p class="card-text"><?= cut_text(strip_tags($BoSuTap['tenBoSuuTap']), 50) ?></p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary"><?= date('d-m-y', strtotime($BoSuTap['ngayTao'])) ?></small>
+                </div>
+            </div>
+        </a>
+        <?php } ?>
+    </div>
 
 
-	<?php $total_page = $total_page - 1;
+    <?php $total_page = $total_page - 1;
 	if (count($ds_BoSuTap) > 0) { ?>
 
-		<div class="pagination">
-			<?php if ($current_page > 1 && $total_page > 1) { ?>
-				<a href=<?= $full_url . "?page=" . ($current_page - 1) ?>>&laquo; Quay lại</a>
-			<?php	} ?>
+    <div class="pagination">
+        <?php if ($current_page > 1 && $total_page > 1) { ?>
+        <a href=<?= $full_url . "?page=" . ($current_page - 1) ?>>&laquo; Quay lại</a>
+        <?php	} ?>
 
-			<?php for ($i = 1; $i <= $total_page; $i++) {
+        <?php for ($i = 1; $i <= $total_page; $i++) {
 				if ($i == $current_page) { ?>
-					<a class="active_a" href=<?= $full_url . "?page=" . $i ?>><?= $i ?></a>
-				<?php } else { ?>
-					<a href=<?= $full_url . "?page=" . $i ?>><?= $i ?></a>
-			<?php }
+        <a class="active_a" href=<?= $full_url . "?page=" . $i ?>><?= $i ?></a>
+        <?php } else { ?>
+        <a href=<?= $full_url . "?page=" . $i ?>><?= $i ?></a>
+        <?php }
 			} ?>
 
-			<?php if ($current_page < $total_page && $total_page > 1) { ?>
-				<a href=<?= $full_url . "?page=" . ($current_page + 1) ?>>Xem tiếp &raquo;</a>
-			<?php } ?>
+        <?php if ($current_page < $total_page && $total_page > 1) { ?>
+        <a href=<?= $full_url . "?page=" . ($current_page + 1) ?>>Xem tiếp &raquo;</a>
+        <?php } ?>
 
 
-		</div>
+    </div>
 
-	<?php } ?>
+    <?php } ?>
 </div>

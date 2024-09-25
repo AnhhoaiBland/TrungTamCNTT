@@ -166,7 +166,7 @@
 
                                     <li><a class="text-dark fw-bold nav-link" href="#"><i class=""></i> Tin tức - Sự Kiện</a></li>
 
-                                    <li class="nav-item dropdown">
+                                    <!-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown2" role="button" aria-haspopup="true" aria-expanded="false">
                                             <i class=""></i> Dịch Vụ
                                         </a>
@@ -179,7 +179,7 @@
                                             <li><a class="dropdown-item" href="#">Hội nghị truyền hình</a></li>
                                             <li><a class="dropdown-item" href="#">Tổ chức sự kiện</a></li>
                                         </ul>
-                                    </li>
+                                    </li> -->
 
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown3" role="button" aria-haspopup="true" aria-expanded="false">

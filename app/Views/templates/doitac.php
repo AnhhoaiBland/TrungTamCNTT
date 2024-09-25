@@ -72,7 +72,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         var carouselElement = document.querySelector('#carouselDoiTac');
         var carousel = new bootstrap.Carousel(carouselElement, {
-            interval: 200 // Time in milliseconds 
+            interval: 5000 // Time in milliseconds 
         });
     });
 </script>

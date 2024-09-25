@@ -2,6 +2,8 @@
 <!-- Include main slide template -->
 <?= $this->include('templates/slide') ?>
 <!-- Include Đối Tác slide template -->
+
+
 <?= $this->endSection() ?>
 
 <!-- Other sections like bài viết mới -->
@@ -19,12 +21,9 @@ $data_baiDangCHuyenMucChinhSachVanBan['url_cate'] = '/cate/thong-tin-chi-dao-die
 echo view('block/block_chuyenMuc', $data_baiDangCHuyenMucChinhSachVanBan);
 ?>
 
-<?php
-$data_baiDangChuyenMucTinDiaPhuong['title'] = "DỊCH VỤ";
-$data_baiDangChuyenMucTinDiaPhuong['ds_baiDang'] =  $baiDangChuyenMucTinDiaPhuong;
-$data_baiDangChuyenMucTinDiaPhuong['url_cate'] = '/cate/tin-tuc-su-kien/tin-hoat-dong-dia-phuong';
-echo view('block/block_chuyenMuc', $data_baiDangChuyenMucTinDiaPhuong);
-?>
+<div class="white-background">
+    <?= $this->include('templates/dichvu') ?>
+</div>
 
 <!-- Main HTML content -->
 <div class="white-background">
