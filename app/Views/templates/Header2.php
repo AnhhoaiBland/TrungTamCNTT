@@ -56,6 +56,7 @@
         /* Đặt màu nền khi hover cho các mục menu lớn */
         .nav-link:hover,
         .nav-item:hover > .nav-link {
+            padding-right: 13px;
             background-color: #cce5ff; /* Màu nền khi hover giống như menu con */
             color: #000; /* Màu chữ khi hover vẫn là đen */
         }
@@ -132,7 +133,7 @@
 
 
     <div style="background-color: #fff">
-        <!-- menu -->
+        <!-- menu -->   
         <div class="menubar container">
             <div class="menu_shadow">
                 <div class="wrapper">
@@ -152,46 +153,33 @@
                                     <li><a class="text-dark fw-bold nav-link" href="<?= base_url() ?>"><i class=""></i> Trang Chủ</a></li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle text-dark fw-bold" href="/gioi-thieu" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                             <i class="" ></i> Giới Thiệu
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="#">Giới thiệu chung</a></li>
-                                            <li><a class="dropdown-item" href="#">Chức năng - Nhiệm vụ</a></li>
-                                            <li><a class="dropdown-item" href="#">Cơ cấu tổ chức</a></li>
-                                            <li><a class="dropdown-item" href="#">Lĩnh vực hoạt động</a></li>
+                                            <li><a class="dropdown-item" href="/gioi-thieu">Giới thiệu chung</a></li>
+                                            <li><a class="dropdown-item" href="/chuc-nang-nhiem-vu">Chức năng - Nhiệm vụ</a></li>
+                                            <li><a class="dropdown-item" href="/co-cau-to-chuc">Cơ cấu tổ chức</a></li>
+                                            <li><a class="dropdown-item" href="/linh-vuc-hoat-dong">Lĩnh vực hoạt động</a></li>
                                             <li><a class="dropdown-item" href="#">Các đối tác</a></li>
                                         </ul>
                                     </li>
 
-                                    <li><a class="text-dark fw-bold nav-link" href="#"><i class=""></i> Tin tức - Sự Kiện</a></li>
+                                    <li><a class="text-dark fw-bold nav-link" href="/cate/tin-tuc-su-kien"><i class=""></i> Tin tức - Sự Kiện</a></li>
 
-                                    <!-- <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown2" role="button" aria-haspopup="true" aria-expanded="false">
-                                            <i class=""></i> Dịch Vụ
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                            <li><a class="dropdown-item" href="#">Bảo trì, nâng cấp hệ thống CNTT-TT</a></li>
-                                            <li><a class="dropdown-item" href="#">Đào tạo nguồn nhân lực CNTT-TT</a></li>
-                                            <li><a class="dropdown-item" href="#">Tư vấn, thiết kế, giám sát và thi công</a></li>
-                                            <li><a class="dropdown-item" href="#">Cho thuê hosting</a></li>
-                                            <li><a class="dropdown-item" href="#">Thiết kế, quản trị Website</a></li>
-                                            <li><a class="dropdown-item" href="#">Hội nghị truyền hình</a></li>
-                                            <li><a class="dropdown-item" href="#">Tổ chức sự kiện</a></li>
-                                        </ul>
-                                    </li> -->
+                                  
 
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown3" role="button" aria-haspopup="true" aria-expanded="false">
                                             <i class=""></i> Tài Liệu Tham Khảo
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                                            <li><a class="dropdown-item" href="#">PCTN, THTK, CLP</a></li>
+                                            <li><a class="dropdown-item" href="/tai-lieu">PCTN, THTK, CLP</a></li>
                                         </ul>
                                     </li>
 
                                     <li><a class="text-dark fw-bold nav-link" href="gop-y"><i class=""></i> Góp Ý</a></li>
-                                    <li><a class="text-dark fw-bold nav-link" href="#"><i class=""></i> Liên Hệ</a></li>
+                                    <!-- <li><a class="text-dark fw-bold nav-link" href="#"><i class=""></i> Liên Hệ</a></li> -->
                                 </ul>
                             </div>
                         </div>

@@ -8,27 +8,32 @@ class UserModel extends BaseModel
 {
     public function dangNhap($tenDN, $pass)
     {
-        $resultCheckName = $this->executeQuery("SELECT COUNT(*) AS checkName FROM NguoiDung WHERE trangThai = '1' and tenDangNhap = '$tenDN';");
-
-        // Lấy giá trị checkName từ kết quả truy vấn
+        // Kiểm tra xem tên đăng nhập có tồn tại không
+        $resultCheckName = $this->executeQuery("SELECT COUNT(*) AS checkName FROM NguoiDung WHERE trangThai = '1' AND tenDangNhap = '$tenDN';");
         $checkNameLogin = $resultCheckName[0]['checkName'];
-
+    
         if ($checkNameLogin == 0) {
             return "Người dùng không tồn tại";
         } else {
-            $resultPass = $this->executeQuery("SELECT matKhau from NguoiDung WHERE trangThai = '1' and tenDangNhap = '$tenDN'");
+            // Lấy mật khẩu từ cơ sở dữ liệu
+            $resultPass = $this->executeQuery("SELECT matKhau FROM NguoiDung WHERE trangThai = '1' AND tenDangNhap = '$tenDN'");
+            
+            // Nếu không tìm thấy mật khẩu
+            if (empty($resultPass)) {
+                return "Mật khẩu không chính xác";
+            }
+    
             $passDB = $resultPass[0]['matKhau'];
-            $encrypter = \Config\Services::encrypter();
-
-            $passDB_de = $encrypter->decrypt(hex2bin($passDB));
-			// echo $passDB_de; exit();
-
-            if ($passDB_de !== $pass) {
+            
+            // Sử dụng password_verify để so sánh mật khẩu
+            if (!password_verify($pass, $passDB)) {
                 return "Mật khẩu không chính xác";
             } else {
+                return true; // Hoặc trả về thông tin người dùng nếu cần
             }
         }
     }
+    
 
     public function layDuLieuCaNhan($userName)
     {

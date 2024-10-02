@@ -25,6 +25,12 @@ $routes->get('/video/(:any)', 'DaPhuongTienController::view_thu_vien_video/$1');
 $routes->get('/tailieu_vanban', 'TaiLieuController::tailieu_vanban');
 $routes->get('/gop-y', 'ThuGopYController::index');
 $routes->get('/sitemap', 'HomeController::sitemap');
+$routes->get('/gioi-thieu', 'GioiThieuController::index');
+$routes->get('/chuc-nang-nhiem-vu', 'GioiThieuController::ChucNangNV');
+$routes->get('/co-cau-to-chuc', 'GioiThieuController::CoCauToChuc');
+$routes->get('/linh-vuc-hoat-dong', 'GioiThieuController::LinhVucHD');
+$routes->get('/tai-lieu', 'TaiLieuController::indexGD');
+
 $routes->get('/err/page_403', (function () {
     return view('Page_403');
 }));

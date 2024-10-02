@@ -61,7 +61,7 @@ class BaiDangModel extends BaseModel
     }
     public function lay_ds_bai_dang_by_url_ChuyenMuc_chuyenMucConAndCha($urlChuenMuc)
     {
-        $strSQl = "select maBaiDang,noiDung, maNguoiDung, maChuyenMuc, maNguoiDungCapNhatCuoi, tieuDe, anhTieuDe, ngayDang, ngayCapNhat, trangThai, urlBaiDang from baidang where maChuyenMuc = (select maChuyenMuc from ChuyenMuc where urlChuenMuc = '$urlChuenMuc' ) or maChuyenMuc =  (select maChuyenMucCha from ChuyenMuc where urlChuenMuc = '$urlChuenMuc' )  and trangThai = '2';";
+        $strSQl = "SELECT maBaiDang,noiDung, maNguoiDung, maChuyenMuc, maNguoiDungCapNhatCuoi, tieuDe, anhTieuDe, ngayDang, ngayCapNhat, trangThai, urlBaiDang from baidang where maChuyenMuc = (select maChuyenMuc from ChuyenMuc where urlChuenMuc = '$urlChuenMuc' ) or maChuyenMuc =  (select maChuyenMucCha from ChuyenMuc where urlChuenMuc = '$urlChuenMuc' )  and trangThai = '2';";
         return $this->executeQuery($strSQl);
     }
 
@@ -81,7 +81,7 @@ class BaiDangModel extends BaseModel
 
     public function layDanhSachtop6new()
     {
-        return $this->executeQuery("SELECT *, (SELECT tenDangNhap FROM NguoiDung WHERE BaiDang.maNguoiDung = NguoiDung.maNguoiDung) AS tenNguoiDung, (SELECT tenChuyenMuc FROM ChuyenMuc WHERE ChuyenMuc.maChuyenMuc = BaiDang.maChuyenMuc) AS tenChuyenMuc FROM BaiDang WHERE trangThai = '2' ORDER BY ngayDang DESC LIMIT 6;");
+        return $this->executeQuery("SELECT *, (SELECT tenDangNhap FROM NguoiDung WHERE BaiDang.maNguoiDung = NguoiDung.maNguoiDung) AS tenNguoiDung, (SELECT tenChuyenMuc FROM ChuyenMuc WHERE ChuyenMuc.maChuyenMuc = BaiDang.maChuyenMuc) AS tenChuyenMuc FROM BaiDang WHERE trangThai = '2' ORDER BY ngayDang DESC LIMIT 6 ;");
     }
 
     public function layTongSoDongBaiViet($urlChuenMuc)
