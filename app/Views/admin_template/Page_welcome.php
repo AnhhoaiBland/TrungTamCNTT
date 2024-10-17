@@ -1,132 +1,199 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-<style>
-    body {
-        overflow: hidden; /* Ẩn thanh cuộn */
-    }
-
-     /* Font chữ Poppins cho toàn bộ trang */
-     body {
-        font-family: 'Poppins', sans-serif; /* Sử dụng font chữ mới */
-    }
-
-    /* Hiệu ứng gradient kết hợp với hình ảnh cho background */
-    .bod {
-        background: linear-gradient(to right, rgba(0, 198, 255, 0.8), rgba(0, 114, 255, 0.1)), 
-        url('https://img.freepik.com/free-vector/blue-futuristic-networking-technology_53876-100679.jpg') no-repeat center center; 
-        background-size: cover; 
-        height: 100vh; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        overflow: hidden; 
-        position: relative; /* Để điều chỉnh các phần tử con */
-    }
-
-    /* Tăng cỡ chữ, thêm hiệu ứng shadow và chuyển chữ thành chữ hoa */
-    .welcome-message {
-        font-size: 3em;
+    <style>
+    .main-content {
+        flex-grow: 1;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
         color: #fff;
-        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
-        text-transform: uppercase; 
-        margin: 0;
-        animation: fadeIn 1s ease; 
-        letter-spacing: 2px; /* Khoảng cách giữa các chữ */
     }
 
-    /* Thay đổi màu, thêm hiệu ứng và chuyển chữ thành chữ hoa cho thời gian */
-    #time-message {
-        font-size: 1.5em;
-        color: #ffe600;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-        text-transform: uppercase; 
-        margin-top: 10px; 
-        animation: fadeIn 1s ease 0.5s; 
-        transition: color 0.3s; /* Hiệu ứng chuyển màu */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
-    /* Thay đổi màu sắc khi hover */
-    #time-message:hover {
-        color: #ffcc00; /* Màu vàng sáng hơn khi hover */
+    header input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
     }
 
-    /* Thêm padding và chỉnh sửa border-radius */
-    .welcome-container {
-        padding: 60px;
-        border-radius: 20px;
-        background-color: rgba(0, 0, 0, 0.5); 
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-        text-align: center; 
-        animation: slideIn 0.5s ease; /* Hiệu ứng trượt vào */
-        z-index: 1; /* Đảm bảo welcome-container nằm trên */
-    }
-    .welcome-container h1{
-        font-size: 2.4rem;
-        color: #fff;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-        text-transform: uppercase;
-
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
     }
 
-    /* Hiệu ứng fade-in */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+    .card {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
     }
 
-    /* Hiệu ứng slide-in */
-    @keyframes slideIn {
-        from { transform: translateY(-20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+    .card i {
+        font-size: 40px;
+        color: #6c63ff;
+        margin-bottom: 10px;
     }
 
-    /* Hiệu ứng hover cho container */
-    .welcome-container:hover {
-        box-shadow: 0 0 50px rgba(0, 0, 255, 0.8);
-        transition: box-shadow 0.3s ease;
+    .card h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .card h2 {
+        color: #333;
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .card p {
+        font-size: 18px;
+        color: #333;
     }
 
-   
-</style>
-
-<div class="bod">
-    <div class="welcome-container">
-        <h1 class="welcome-message">Chào mừng, Quản trị viên</h1>
-        <h1 class="welcome-message">Trang quản trị Trung tâm Công nghệ Thông tin & Truyền thông TP. Cần Thơ</h1>
-        <p id="time-message"></p>
-    </div>
-</div>
-
-
-
+    /* Biểu đồ nằm giữa */
+    .chart-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: 50px auto;
+        align-items: center;
+    }
+    </style>
+</head>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<body>
+
+    <div class="main-content">
+        <header>
+            <input type="text" placeholder="Tìm kiếm...">
+        </header>
+
+        <div class="content-grid">
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h2>Người dùng</h2> <!-- Tiêu đề cho số người dùng -->
+                <p>1,200</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h2>Truy Cập</h2> <!-- Tiêu đề cho doanh số -->
+                <p>$34,500</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tasks"></i>
+                <h2>Bài Đăng</h2> <!-- Tiêu đề cho công việc -->
+                <p>75%</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-envelope"></i>
+                <h2>Góp Ý</h2> <!-- Tiêu đề cho tin nhắn -->
+                <p>42</p>
+            </div>
+        </div>
+
+
+        <!-- Container chứa biểu đồ -->
+        <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+
+</body>
+
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const timeMessage = document.getElementById("time-message");
+// Lấy tháng hiện tại bằng JavaScript
+const currentDate = new Date();
+const currentMonth = currentDate.getMonth(); // Lấy tháng hiện tại (0 - 11)
 
-        function updateTime() {
-            const now = new Date();
-            const days = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
-            const dayName = days[now.getDay()]; // Lấy tên thứ
-            const day = now.getDate(); // Ngày
-            const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Tháng
-            const year = now.getFullYear(); // Năm
-
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-
-            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            const formattedDate = `${dayName}, ${day}/${month}/${year}`; // Định dạng ngày
-
-            timeMessage.textContent = `Cần Thơ: ${formattedTime} - ${formattedDate}`; // Hiển thị thời gian và ngày
+// Biểu đồ đường hiển thị lượt truy cập website
+const ctx = document.getElementById('lineChart').getContext('2d');
+const lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8',
+            'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'
+        ], // Tháng hiển thị trên trục X
+        datasets: [{
+                label: 'Lượt truy cập hàng ngày', // Đường biểu thị lượt truy cập hàng ngày
+                data: [300, 400, 350, 600, 800, 900, 1200, 1300, 1400, 1500, 1600,
+                1700], // Dữ liệu lượt truy cập hàng ngày
+                borderColor: 'rgba(255, 99, 132, 1)', // Màu đỏ
+                backgroundColor: 'rgba(255, 99, 132, 0.2)', // Màu nền trong suốt
+                fill: true,
+                borderWidth: 2
+            },
+            {
+                label: 'Lượt truy cập hàng tháng', // Đường biểu thị lượt truy cập hàng tháng
+                data: [1200, 1500, 1700, 1800, 2000, 2200, 2400, 2500, 2600, 2700, 2800,
+                2900], // Dữ liệu lượt truy cập hàng tháng
+                borderColor: 'rgba(54, 162, 235, 1)', // Màu xanh
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Màu nền trong suốt
+                fill: true,
+                borderWidth: 2
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true, // Hiển thị chú thích
+                position: 'top' // Vị trí của chú thích
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Tháng' // Tiêu đề trục X
+                },
+                ticks: {
+                    color: function(context) {
+                        // Nếu tháng hiện tại, đổi màu tick (nhãn tháng)
+                        return context.index === currentMonth ? 'red' : 'black';
+                    },
+                    font: function(context) {
+                        // Nếu tháng hiện tại, đổi font weight để làm nổi bật
+                        return context.index === currentMonth ? {
+                            weight: 'bold'
+                        } : {};
+                    }
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Số lượt truy cập' // Tiêu đề trục Y
+                },
+                beginAtZero: true // Bắt đầu từ 0
+            }
         }
+    }
+});
 
-       
-        setInterval(updateTime, 1000);
-        updateTime();
+
+// Hiệu ứng di chuột với JavaScript
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.style.transform = 'scale(1.1)';
     });
-</script>
 
+    card.addEventListener('mouseout', () => {
+        card.style.transform = 'scale(1)';
+    });
+});
+</script>

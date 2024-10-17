@@ -1,70 +1,79 @@
 <head>
     <style>
         /* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
 
-.container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 10px;
-}
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
 
-/* Header Section */
-.block_title-gioi-thieu {
-    font-size: 2.5rem ;
-    font-weight: bold;
-    color: #005baf; /* Matching the CTICT blue logo color */
-    text-transform: uppercase;
-}
+        /* Header Section */
+        .block_title-gioi-thieu {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #005baf; /* Matching the CTICT blue logo color */
+            text-transform: uppercase;
+        }
 
-h1.block_title-gioi-thieu {
-    margin-top: 0;
-}
+        h1.block_title-gioi-thieu {
+            margin-top: 0;
+        }
 
-h3.block_title-gioi-thieu {
-    font-size: 1.8rem ;
-    color: #333;
-}
+        h3.block_title-gioi-thieu {
+            font-size: 1.8rem;
+            color: #333;
+        }
 
-/* Contact Info */
-p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 10px 0;
-}
+        /* Contact Info */
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
 
-p a {
-    color: #005baf;
-    text-decoration: none;
-}
+        p a {
+            color: #005baf;
+            text-decoration: none;
+        }
 
-p a:hover {
-    text-decoration: underline;
-}
+        p a:hover {
+            text-decoration: underline;
+        }
 
+        /* Content Section */
+        .heading-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #005baf; /* Using the same color theme */
+        }
 
+        .introduction-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
 
-/* Content Section */
-.heading-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 30px;
-    color: #005baf; /* Using the same color theme */
-}
+        /* Image Styles */
+        .gioithieu {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #005baf; /* Adding blue border */
+            border-radius: 3px; /* Optional: rounded corners */
+            transition: transform 0.3s ease; /* Transition for hover effect */
+        }
 
-.introduction-text {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #333;
-}
-
-
+        .gioithieu:hover {
+            transform: scale(1.05); /* Zoom in effect on hover */
+        }
     </style>
 </head>
 
@@ -85,7 +94,7 @@ p a:hover {
     <div class="row mt-2">
     <h2 class="heading-title">Giới thiệu chung</h2>
         <div class="col-md-12 text-center">
-            <img class="gioithieu" src="<?= base_url('public/upload/media/images/ctict_2024_resize.png') ?>" alt="CTICT Building" class="img-fluid" style="max-width: 100%; height: 100%;">
+            <img class="gioithieu" src="<?= base_url('public/upload/media/images/ctict_2024_resize.png') ?>" alt="CTICT Building" class="img-fluid">
             <!-- Assuming the image is stored in the public/images directory -->
         </div>
     </div>

@@ -1,4 +1,4 @@
-//linh vuc hoat dong
+    
 
 
 <head>
@@ -15,7 +15,6 @@
         /* Container for the video and content */
         .container {
             position: relative;
-            z-index: 1; /* Set lower z-index for the container */
         }
 
         /* Style for the video background */
