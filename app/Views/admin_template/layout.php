@@ -66,127 +66,169 @@
 	<link rel="stylesheet" href="public/assets/vanilla-js-tabs/vanilla-js-tabs.css">
 
 	<style>
-    /* Tổng quát */
-    .wrapper {
-        font-family: 'Poppins', sans-serif; /* Font chữ hiện đại */
-    }
+		/* Tổng quát */
+		.wrapper {
+			font-family: 'Poppins', sans-serif;
+			/* Font chữ hiện đại */
+		}
 
-    /* Navbar */
-    .main-header {
-        background-color: #343a40; /* Màu nền tối cho navbar */
-        color: white;
-    }
+		/* Navbar */
+		.main-header {
+			background-color: #343a40;
+			/* Màu nền tối cho navbar */
+			color: white;
+		}
 
-    .main-header .navbar-nav .nav-link {
-        color: white; /* Màu chữ trắng */
-    }
+		.main-header .navbar-nav .nav-link {
+			color: white;
+			/* Màu chữ trắng */
+		}
 
-    .main-header .navbar-nav .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.2); /* Hiệu ứng hover */
-    }
+		.main-header .navbar-nav .nav-link:hover {
+			background-color: rgba(255, 255, 255, 0.2);
+			/* Hiệu ứng hover */
+		}
 
-    /* Sidebar */
-    .main-sidebar {
-        background-color: #212529; /* Màu nền tối cho sidebar */
-        height: 100%; /* Chiều cao sidebar */
-    }
+		/* Sidebar */
+		.main-sidebar {
+			background-color: #212529;
+			/* Màu nền tối cho sidebar */
+			height: 100%;
+			/* Chiều cao sidebar */
+		}
 
-    .main-sidebar .brand-link {
-        color: #ffffff; /* Màu chữ cho brand */
-        text-align: center; /* Căn giữa brand */
-    }
+		.main-sidebar .brand-link {
+			color: #ffffff;
+			/* Màu chữ cho brand */
+			text-align: center;
+			/* Căn giữa brand */
+		}
 
-    .main-sidebar .nav-link {
-        color: #b8c7ce; /* Màu chữ cho sidebar */
-    }
+		.main-sidebar .nav-link {
+			color: #b8c7ce;
+			/* Màu chữ cho sidebar */
+		}
 
-    .main-sidebar .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.1); /* Hiệu ứng hover */
-        color: white; /* Màu chữ khi hover */
-    }
+		.main-sidebar .nav-link:hover {
+			background-color: rgba(255, 255, 255, 0.1);
+			/* Hiệu ứng hover */
+			color: white;
+			/* Màu chữ khi hover */
+		}
 
-    .main-sidebar .nav-icon {
-        color: #ffffff; /* Màu icon */
-    }
+		.main-sidebar .nav-icon {
+			color: #ffffff;
+			/* Màu icon */
+		}
 
-    /* User Panel */
-    .user-panel {
-        background-color: rgba(255, 255, 255, 0.1); /* Nền mờ cho user panel */
-        border-radius: 5px; /* Bo góc cho user panel */
-        margin-bottom: 15px; /* Khoảng cách dưới user panel */
-    }
+		/* User Panel */
+		.user-panel {
+			background-color: rgba(255, 255, 255, 0.1);
+			/* Nền mờ cho user panel */
+			border-radius: 5px;
+			/* Bo góc cho user panel */
+			margin-bottom: 15px;
+			/* Khoảng cách dưới user panel */
+		}
 
-    .user-panel .info {
-        color: white; /* Màu chữ cho thông tin người dùng */
-    }
+		.user-panel .info {
+			color: white;
+			/* Màu chữ cho thông tin người dùng */
+		}
 
-    .user-panel .info a {
-        color: #ff5b5b; /* Màu chữ cho link đăng xuất */
-    }
+		.user-panel .info a {
+			color: #ff5b5b;
+			/* Màu chữ cho link đăng xuất */
+		}
 
-    /* Content Wrapper */
-    .content-wrapper {
-        background-color: #ffffff; /* Màu nền trắng cho nội dung */
-        border-radius: 10px; /* Bo góc */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
-        padding: 20px; /* Padding cho nội dung */
-        margin: 20px; /* Khoảng cách với các thành phần khác */
-    }
+		/* Content Wrapper */
+		.content-wrapper {
+			background-color: #ffffff;
+			/* Màu nền trắng cho nội dung */
+			border-radius: 10px;
+			/* Bo góc */
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			/* Hiệu ứng đổ bóng */
+			padding: 20px;
+			/* Padding cho nội dung */
+			margin: 20px;
+			/* Khoảng cách với các thành phần khác */
+		}
 
-    /* Footer */
-    .main-footer {
-        background-color: #343a40; /* Màu nền tối cho footer */
-        color: white;
-        text-align: center; /* Căn giữa chữ */
-    }
+		/* Footer */
+		.main-footer {
+			background-color: #343a40;
+			/* Màu nền tối cho footer */
+			color: white;
+			text-align: center;
+			/* Căn giữa chữ */
+		}
 
-    .main-footer a {
-        color: #ffcc00; /* Màu chữ cho link trong footer */
-    }
+		.main-footer a {
+			color: #ffcc00;
+			/* Màu chữ cho link trong footer */
+		}
 
-    /* Hiệu ứng khi sidebar thu nhỏ */
-    .sidebar-collapse .nav-link {
-        font-size: 0.9em; /* Giảm kích thước chữ khi thu nhỏ */
-    }
+		/* Hiệu ứng khi sidebar thu nhỏ */
+		.sidebar-collapse .nav-link {
+			font-size: 0.9em;
+			/* Giảm kích thước chữ khi thu nhỏ */
+		}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-        .main-header .navbar-nav {
-            flex-direction: column; /* Đổi chiều navbar khi trên thiết bị nhỏ */
-        }
-    }
-	.user-panel {
-        background-color: rgba(255, 255, 255, 0.1); /* Nền mờ cho user panel */
-        border-radius: 5px; /* Bo góc cho user panel */
-        margin-bottom: 15px; /* Khoảng cách dưới user panel */
-        display: flex; /* Sử dụng flex để căn giữa */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        padding: 10px; /* Padding cho user panel */
-    }
+		/* Responsive */
+		@media (max-width: 768px) {
+			.main-header .navbar-nav {
+				flex-direction: column;
+				/* Đổi chiều navbar khi trên thiết bị nhỏ */
+			}
+		}
 
-    .user-panel .image {
-        margin-right: 10px; /* Khoảng cách giữa ảnh và thông tin */
-    }
+		.user-panel {
+			background-color: rgba(255, 255, 255, 0.1);
+			/* Nền mờ cho user panel */
+			border-radius: 5px;
+			/* Bo góc cho user panel */
+			margin-bottom: 15px;
+			/* Khoảng cách dưới user panel */
+			display: flex;
+			/* Sử dụng flex để căn giữa */
+			align-items: center;
+			/* Căn giữa theo chiều dọc */
+			padding: 10px;
+			/* Padding cho user panel */
+		}
 
-    .user-panel .image img {
-        width: 50px; /* Đặt kích thước ảnh */
-        height: 50px; /* Đặt kích thước ảnh */
-    }
+		.user-panel .image {
+			margin-right: 10px;
+			/* Khoảng cách giữa ảnh và thông tin */
+		}
 
-    .user-panel .info {
-        color: white; /* Màu chữ cho thông tin người dùng */
-        flex-grow: 1; /* Cho phép chiếm không gian còn lại */
-    }
+		.user-panel .image img {
+			width: 50px;
+			/* Đặt kích thước ảnh */
+			height: 50px;
+			/* Đặt kích thước ảnh */
+		}
 
-    .user-panel .info a {
-        color: #ff5b5b; /* Màu chữ cho link đăng xuất */
-        text-decoration: none; /* Bỏ gạch chân */
-    }
+		.user-panel .info {
+			color: white;
+			/* Màu chữ cho thông tin người dùng */
+			flex-grow: 1;
+			/* Cho phép chiếm không gian còn lại */
+		}
 
-    .user-panel .info a:hover {
-        text-decoration: underline; /* Gạch chân khi hover */
-    }
-</style>
+		.user-panel .info a {
+			color: #ff5b5b;
+			/* Màu chữ cho link đăng xuất */
+			text-decoration: none;
+			/* Bỏ gạch chân */
+		}
+
+		.user-panel .info a:hover {
+			text-decoration: underline;
+			/* Gạch chân khi hover */
+		}
+	</style>
 
 
 
@@ -224,16 +266,17 @@
 			<div class="sidebar">
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
-    <div class="image">
-        <img src="public/assets/admin_template/dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
-    </div>
-    <div class="info">
-        <span class="d-block text-white" id="view_infor" style="cursor: pointer;"><?php $tenDangNhap = $data[0]['tenDangNhap']; echo $tenDangNhap ?></span>
-        <br>
-        <a href="<?= site_url('user/logout') ?>">Đăng xuất</a>
+					<div class="image">
+						<img src="public/assets/admin_template/dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+					</div>
+					<div class="info">
+						<span class="d-block text-white" id="view_infor" style="cursor: pointer;"><?php $tenDangNhap = $data[0]['tenDangNhap'];
+																									echo $tenDangNhap ?></span>
+						<br>
+						<a href="<?= site_url('user/logout') ?>">Đăng xuất</a>
 
-    </div>
-</div>
+					</div>
+				</div>
 
 
 				<!-- Sidebar Menu -->
@@ -349,7 +392,7 @@
 								</a>
 							</li> -->
 
-							<!--li class="nav-item has-treeview">
+						<!--li class="nav-item has-treeview">
 						<a href="admin/ds_nguoidung" class="nav-link">
 							<i class="nav-icon fas fa-user"></i>
 							<p>
@@ -369,39 +412,39 @@
 						
 					</li-->
 
-							<?php foreach ($danhSachChucNang as $ChucNang) {
-								if ($ChucNang['urlChucNang'] == '/admin/ds_category') { ?>
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/ds_category') { ?>
 
-									<li class="nav-item has-treeview">
-										<a href="admin/ds_category" class="nav-link">
-											<i class="nav-icon fa fa-list-alt"></i>
-											<p>
-												Chuyên mục
-											</p>
-										</a>
+								<li class="nav-item has-treeview">
+									<a href="admin/ds_category" class="nav-link">
+										<i class="nav-icon fa fa-list-alt"></i>
+										<p>
+											Chuyên mục
+										</p>
+									</a>
 
-									</li>
-								<?php break;
-								} ?>
-							<?php } ?>
+								</li>
+							<?php break;
+							} ?>
+						<?php } ?>
 
 
-							<?php foreach ($danhSachChucNang as $ChucNang) {
-								if ($ChucNang['urlChucNang'] == '/admin/ds_baidang') { ?>
-									<li class="nav-item has-treeview">
-										<a href="admin/ds_baidang" class="nav-link">
-											<i class="nav-icon fa fa-file-text-o"></i>
-											<p>
-												Bài đăng
-											</p>
-										</a>
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/ds_baidang') { ?>
+								<li class="nav-item has-treeview">
+									<a href="admin/ds_baidang" class="nav-link">
+										<i class="nav-icon fa fa-file-text-o"></i>
+										<p>
+											Bài đăng
+										</p>
+									</a>
 
-									</li>
-								<?php break;
-								} ?>
-							<?php } ?>
+								</li>
+							<?php break;
+							} ?>
+						<?php } ?>
 
-							<!-- <li class="nav-item has-treeview">
+						<!-- <li class="nav-item has-treeview">
 							<a href="admin/ds_baiviet_theo_thang" class="nav-link">
 								<i class="nav-icon fa fa-check"></i>
 								<p>
@@ -411,79 +454,94 @@
 
 						</li> -->
 
-							<?php foreach ($danhSachChucNang as $ChucNang) {
-								if ($ChucNang['urlChucNang'] == '/admin/vanban') { ?>
-									<li class="nav-item has-treeview">
-										<a href="admin/vanban/" class="nav-link">
-											<i class="nav-icon fa fa-file-o "></i>
-											<p>
-												Văn bản liên quan
-											</p>
-										</a>
-									</li>
-								<?php	} ?>
-							<?php } ?>
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/vanban') { ?>
+								<li class="nav-item has-treeview">
+									<a href="admin/vanban/" class="nav-link">
+										<i class="nav-icon fa fa-file-o "></i>
+										<p>
+											Văn bản liên quan
+										</p>
+									</a>
+								</li>
+							<?php	} ?>
+						<?php } ?>
 
 
-							<?php foreach ($danhSachChucNang as $ChucNang) {
-								if ($ChucNang['urlChucNang'] == '/admin/tke_theo_category') { ?>
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/tke_theo_category') { ?>
 
-									<li class="nav-item has-treeview">
-										<a href="admin/tke_theo_category" class="nav-link">
-											<i class="nav-icon fa fa-pie-chart"></i>
-											<p>
-												T.kê theo chuyên mục
-											</p>
-										</a>
+								<li class="nav-item has-treeview">
+									<a href="admin/tke_theo_category" class="nav-link">
+										<i class="nav-icon fa fa-pie-chart"></i>
+										<p>
+											T.kê theo chuyên mục
+										</p>
+									</a>
 
-									</li>
-								<?php	} ?>
-							<?php } ?>
+								</li>
+							<?php	} ?>
+						<?php } ?>
 
-							<?php foreach ($danhSachChucNang as $ChucNang) {
-								if ($ChucNang['urlChucNang'] == '/admin/panel') { ?>
-									<li class="nav-item has-treeview">
-										<a href="admin/panel" class="nav-link">
-											<i class="nav-icon fa fa-photo"></i>
-											<p>
-												QL panel chính
-											</p>
-										</a>
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/panel') { ?>
+								<li class="nav-item has-treeview">
+									<a href="admin/panel" class="nav-link">
+										<i class="nav-icon fa fa-photo"></i>
+										<p>
+											QL panel chính
+										</p>
+									</a>
 
-									</li>
-								<?php	} ?>
-							<?php } ?>
-
-
-							<?php foreach ($danhSachChucNang as $ChucNang) {
-								if ($ChucNang['urlChucNang'] == '/admin/hopthu') { ?>
-									<li class="nav-item has-treeview">
-										<a href="admin/thu_gopy" class="nav-link">
-											<i class="nav-icon fa fa-envelope"></i>
-											<p>
-												Hộp thư góp ý
-											</p>
-										</a>
-
-									</li>
-								<?php	} ?>
-							<?php } ?>
+								</li>
+							<?php	} ?>
+						<?php } ?>
 
 
-							<?php foreach ($danhSachChucNang as $ChucNang) {
-								if ($ChucNang['urlChucNang'] == '/admin/daphuongtien') { ?>
-									<li class="nav-item has-treeview">
-										<a href="admin/daphuongtien" class="nav-link">
-											<i class="nav-icon fa fa-image"></i>
-											<p>
-												Quản lý thư viện ảnh/ videos
-											</p>
-										</a>
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/hopthu') { ?>
+								<li class="nav-item has-treeview">
+									<a href="admin/thu_gopy" class="nav-link">
+										<i class="nav-icon fa fa-envelope"></i>
+										<p>
+											Hộp thư góp ý
+										</p>
+									</a>
 
-									</li>
-								<?php break;
-								} ?>
-							<?php } ?>
+								</li>
+							<?php	} ?>
+						<?php } ?>
+
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/danh_sach_tai_lieu_tham_khao') { ?>
+
+								<li class="nav-item has-treeview">
+									<a href="/admin/danh_sach_tai_lieu_tham_khao" class="nav-link">
+										<i class="nav-icon fa fa-archive"></i>
+										<p>
+											Tài Liệu Tham Khảo
+										</p>
+									</a>
+
+								</li>
+							<?php break;
+							} ?>
+						<?php } ?>
+
+						<?php foreach ($danhSachChucNang as $ChucNang) {
+							if ($ChucNang['urlChucNang'] == '/admin/daphuongtien') { ?>
+								<li class="nav-item has-treeview">
+									<a href="admin/daphuongtien" class="nav-link">
+										<i class="nav-icon fa fa-image"></i>
+										<p>
+											Quản lý thư viện ảnh/ videos
+										</p>
+									</a>
+
+								</li>
+							<?php break;
+							} ?>
+						<?php } ?>
 
 
 					</ul>

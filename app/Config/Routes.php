@@ -29,7 +29,9 @@ $routes->get('/gioi-thieu', 'GioiThieuController::index');
 $routes->get('/chuc-nang-nhiem-vu', 'GioiThieuController::ChucNangNV');
 $routes->get('/co-cau-to-chuc', 'GioiThieuController::CoCauToChuc');
 $routes->get('/linh-vuc-hoat-dong', 'GioiThieuController::LinhVucHD');
-$routes->get('/tai-lieu', 'TaiLieuController::indexGD');
+$routes->get('/tai-lieu', 'TaiLieuThamKhaoController::indexGD');  // Shows folders only
+
+
 
 $routes->get('/err/page_403', (function () {
     return view('Page_403');
@@ -163,3 +165,26 @@ $routes->get('admin/danh_sach', 'DanhSachController::index');
 $routes->post('admin/add_danh_sach', 'DanhSachController::add_danh_sach');
 $routes->post('admin/edit_danh_sach', 'DanhSachController::edit_danh_sach');
 $routes->post('admin/delete_danh_sach', 'DanhSachController::delete_danh_sach');
+
+// List Quản Lý Thư Mục Và File
+$routes->get('admin/danh_sach_tai_lieu_tham_khao', 'TaiLieuThamKhaoController::index');
+$routes->post('admin/danh_sach_tai_lieu_tham_khao/addFolder', 'TaiLieuThamKhaoController::addFolder');
+$routes->post('/admin/danh_sach_tai_lieu_tham_khao/editFolder', 'TaiLieuThamKhaoController::editFolder');
+$routes->get('/admin/danh_sach_tai_lieu_tham_khao/deleteFolder/(:num)', 'TaiLieuThamKhaoController::deleteFolder/$1');
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$routes->post('admin/danh_sach_tai_lieu_tham_khao/editFile', 'TaiLieuThamKhaoController::editFile');
+$routes->post('admin/danh_sach_tai_lieu_tham_khao/addFile', 'TaiLieuThamKhaoController::addFile');
+$routes->get('/admin/danh_sach_tai_lieu_tham_khao/deleteFile/(:num)', 'TaiLieuThamKhaoController::deleteFile/$1');
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$routes->get('admin/trash', 'TaiLieuThamKhaoController::trash');
+$routes->get('admin/tai_lieu_tham_khao/deleteFile/(:num)', 'TaiLieuThamKhaoController::deleteFile/$1');
+$routes->get('admin/tai_lieu_tham_khao/deleteFolder/(:num)', 'TaiLieuThamKhaoController::deleteFolder/$1');
+$routes->get('admin/tai_lieu_tham_khao/restoreFile/(:num)', 'TaiLieuThamKhaoController::restoreFile/$1');
+$routes->get('admin/tai_lieu_tham_khao/restoreFolder/(:num)', 'TaiLieuThamKhaoController::restoreFolder/$1');
+$routes->get('admin/tai_lieu_tham_khao/permanentlyDeleteFile/(:num)', 'TaiLieuThamKhaoController::permanentlyDeleteFile/$1');
+$routes->get('admin/tai_lieu_tham_khao/permanentlyDeleteFolder/(:num)', 'TaiLieuThamKhaoController::permanentlyDeleteFolder/$1');
+
