@@ -188,3 +188,4 @@ $routes->get('admin/tai_lieu_tham_khao/restoreFolder/(:num)', 'TaiLieuThamKhaoCo
 $routes->get('admin/tai_lieu_tham_khao/permanentlyDeleteFile/(:num)', 'TaiLieuThamKhaoController::permanentlyDeleteFile/$1');
 $routes->get('admin/tai_lieu_tham_khao/permanentlyDeleteFolder/(:num)', 'TaiLieuThamKhaoController::permanentlyDeleteFolder/$1');
 
+$routes->get('admin/updateFormData', 'ThongTinWebController::updateFormData');

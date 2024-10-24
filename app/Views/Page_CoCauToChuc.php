@@ -7,6 +7,7 @@
             --level-3: #006494;
             --level-4: #f27c8d;
             --black: black;
+            --font-family: 'Roboto', sans-serif;
         }
 
         * {
@@ -18,18 +19,20 @@
         ol {
             list-style: none;
         }
-        p{
-           
-            font-weight: 500    ;
+
+        p {
+            font-weight: 500;
         }
-        b{
-            color:#1b98e0;
+
+        b {
+            color: #1b98e0;
         }
 
         body {
             margin: 50px 0 100px;
             text-align: center;
-            font-family: Arial, sans-serif;
+            font-family: var(--font-family);
+            background: #f4f4f9;
         }
 
         .container {
@@ -44,68 +47,109 @@
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             border-radius: 8px;
-            word-wrap: break-word; /* Allows text to wrap */
+            word-wrap: break-word;
             background-color: #fff;
             margin-bottom: 20px;
-            min-height: 50px; /* Ensures the boxes can grow as content is added */
+            min-height: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        /* Ensure titles are centered */
+        .rectangle:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
         h2, h3, h4 {
-            color:#fff;
-            text-align: center; /* Center text in the heading */
+            color: #fff;
+            text-align: center;
         }
 
-        /* LEVEL-1 STYLES */
         .level-1 {
             width: 80%;
             margin: 0 auto 20px;
-            background: var(--level-1);
-        }
-       
-        /* LEVEL-2 STYLES */
-        .level-2-wrapper {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
+            background: linear-gradient(135deg, var(--level-1), var(--level-2));
         }
 
-        .level-2-wrapper li {
-            position: relative;
+        .level-2-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
         .level-2 {
             width: 100%;
-            margin: 0 auto 20px;
-            background: var(--level-2);
+            background: linear-gradient(135deg, var(--level-2), var(--level-3));
         }
 
-        /* LEVEL-3 STYLES */
         .level-3-wrapper {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(2, 2fr);
-            grid-gap: 20px;
-            width: 100%;
-            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
         .level-3 {
             width: 100%;
-            margin: 0 auto 10px;
-            background: var(--level-3);
-        }
-        .heading-title {
-            text-align: left;
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            color: #005baf; /* Using the same color theme */
+            background: linear-gradient(135deg, var(--level-3), var(--level-4));
         }
 
-        /* Adjustments for responsive design */
+        .heading-title {
+            font-weight: bold;
+            margin-top: 0;
+            text-align: left;
+            border-bottom: 2px solid #005baf;
+            padding-bottom: 10px;
+            font-style: italic;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #005baf;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--level-1);
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .navbar .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+        }
+
         @media screen and (max-width: 700px) {
             .rectangle {
                 padding: 20px 10px;
@@ -127,11 +171,27 @@
             .level-3-wrapper li {
                 margin-bottom: 20px;
             }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .navbar .menu-toggle {
+                display: flex;
+            }
         }
     </style>
 </head>
 
 <body>
+   
     <div class="container p-4 bg-body">
         <h2 class="heading-title">Cơ cấu tổ chức</h2>
         <h2 class="level-1 rectangle">GIÁM ĐỐC TRUNG TÂM</h2>
@@ -199,5 +259,11 @@
             </li>
         </ol>
     </div>
-</body>
 
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar ul');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>

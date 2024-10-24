@@ -3,13 +3,18 @@
 
 <head>
     <style>
-        .heading-title {
-            font-size: 22px;
+            .heading-title {
+            font-weight: bold;
+            margin-top: 0;
+            text-align: left;
+            border-bottom: 2px solid #005baf;
+            padding-bottom: 10px;
+            font-style: italic;
+            font-size: 1.8rem;
             font-weight: bold;
             margin-top: 10px;
+            margin-bottom: 20px;
             color: #005baf;
-            position: relative;
-            z-index: 2; /* Ensures heading is above video */
         }
 
         /* Container for the video and content */

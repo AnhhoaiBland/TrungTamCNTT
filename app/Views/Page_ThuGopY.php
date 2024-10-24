@@ -72,45 +72,14 @@
             <div class="col-md-12 text-center">
                 <span class="block_title-gop-y">THƯ GÓP Ý TRUNG TÂM CÔNG NGHỌ THÔNG TIN VÀ TRUYỀN THÔNG THÀNH PHỐ CẦN THƠ</span>
             </div>
-            <div class="col-md-10 mt-5">
+            <!-- <div class="col-md-10 mt-5">
                 <p class="text-body">Địa chỉ: <b>Số 29 đường Cách mạng tháng 8 - phường Thới Bình - quận Ninh Kiều - TP.Cần Thơ.</b></p>
                 <p class="text-body">Số Điện thoại: <b>(0292) 3 690 888 - Fax: 080 72123</b></p>
                 <p class="text-body">Email: <b>ctict@cantho.gov.vn</b></p>
                 <i class="text-body">Vui lòng điền đủ thông tin bên dưới !</i>
-            </div>
+            </div> -->
         </div>
-        <form class="row" action="gop-y/add" method="post" enctype="multipart/form-data">
-            <div class="col-md-5">
-                <div class="mb-3">
-                    <input type="text" class="form-control custom-input" name="hoten" id="hoTen" placeholder="Họ và tên">
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control custom-input" name="dienThoai" required placeholder="Số điện thoại" id="dienThoai" onkeypress="return onlyNumbers(event)">
-                    <p id="errorMessage" class="text-danger" style="display: none;"> Vui lòng nhập vào là số điện thoại</p>
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control custom-input" name="emailgy" id="emailgy" placeholder="Email">
-                </div>
-                <div class="mb-3">
-                    <input type="file" class="form-control file-upload" name="fileUpload">
-                </div>
-            </div>
-            <div class="col-md-7">
-                <div class="mb-3">
-                    <input type="text" class="form-control custom-input" name="tieuDe" id="tieuDe" required placeholder="Tiêu đề">
-                </div>
-                <div class="mb-3">
-                    <label for="summernote" class="form-label">Nội dung</label>
-                    <textarea id="summernote" name="noiDung"></textarea>
-                </div>
-            </div>
-            <div class="col-md-12 mb-3">
-                <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-            </div>
-            <div class="col-md-12 text-center mt-3">
-                <button class="btn btn-success fw-bold" type="submit">Gửi thư góp ý</button>
-            </div>
-        </form>
+        
 
         <?php if ($showThuGopY) { ?>
         <div class="row pt-3">

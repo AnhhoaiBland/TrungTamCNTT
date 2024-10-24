@@ -109,7 +109,7 @@
 
         max-width: 100rem;
         /* Giới hạn kích thước tối đa của container */
-        margin: 0 auto;
+        margin: 10px auto;
         /* Căn giữa container */
         padding-left: 5px;
         /* Khoảng cách bên trái */
